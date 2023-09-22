@@ -11,11 +11,12 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
+import("default-passive-events");
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="relative  bg-primary snap-y snap-mandatory h-screen overflow-scroll ">
+      <div className="relative  bg-primary  ">
         <div className=" bg-center relative">
           <Navbar />
           <Hero />

@@ -17,22 +17,23 @@ const Computers = () => {
 
 const ComputersCanvas = () => {
   return (
-    <Canvas
-      frameLoop="demand"
-      shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserverDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
+    <Suspense fallback={<CanvasLoader />}>
+      <Canvas
+        frameLoop="demand"
+        shadows
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserverDrawingBuffer: true }}
+      >
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
         <Computers />
-      </Suspense>
-      <Preload all />
-    </Canvas>
+
+        <Preload all />
+      </Canvas>
+    </Suspense>
   );
 };
 

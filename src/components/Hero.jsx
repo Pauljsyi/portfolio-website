@@ -15,7 +15,7 @@ const Hero = () => {
    5px, transparent 25%)`;
     }
 
-    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mousemove", handleMouseMove, { passive: true });
   }, [mousePosition]);
 
   return (
