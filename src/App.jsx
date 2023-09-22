@@ -20,7 +20,7 @@ function App() {
           <Navbar />
           <Hero />
         </div>
-        <div className="snap-start">
+        <div>
           <About />
           <Experience />
           <Works />
