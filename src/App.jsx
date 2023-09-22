@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import { BrowserRouter } from "react-router-dom";
 import {
   About,
@@ -15,17 +16,19 @@ function App() {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover-no-repeat bg-center">
+        <div className=" bg-center relative">
           <Navbar />
           <Hero />
         </div>
-        <About />
-        <Experience />
-        <Works />
-        <Feedbacks />
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
+        <div className="z-10">
+          <div className="relative z-1">
+            <About />
+            <Experience />
+            <Works />
+            <Feedbacks />
+            <Contact />
+            <StarsCanvas />
+          </div>
         </div>
       </div>
     </BrowserRouter>
