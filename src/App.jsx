@@ -15,20 +15,20 @@ import {
 function App() {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
+      <div className="relative  bg-primary snap-y snap-mandatory h-screen overflow-scroll ">
         <div className=" bg-center relative">
           <Navbar />
           <Hero />
         </div>
-        <div className="z-10">
-          <div className="relative z-1">
-            <About />
-            <Experience />
-            <Works />
-            <Feedbacks />
-            <Contact />
-            <StarsCanvas />
-          </div>
+        <div className="snap-start">
+          <About />
+          <Experience />
+          <Works />
+          <Feedbacks />
+        </div>
+        <div>
+          <Contact />
+          <StarsCanvas />
         </div>
       </div>
     </BrowserRouter>

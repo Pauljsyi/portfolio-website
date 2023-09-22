@@ -19,7 +19,7 @@ const Hero = () => {
   }, [mousePosition]);
 
   return (
-    <section className="w-full h-screen mx-auto">
+    <section className="w-full h-screen mx-auto snap-start">
       <div className="w-full h-screen mx-auto" id="hero">
         <div id="spotlight"></div>
       </div>
@@ -30,10 +30,14 @@ const Hero = () => {
       >
         <div className="flex flex-col justify-center items-center mt-5"></div>
         <div>
-          <h1 className={` relative ${styles.heroHeadText} `}>
-            Hi, I'm <span className="text-[#]">Paul</span>
+          <h1 className={` relative ${styles.heroHeadText} drop-shadow-lg`}>
+            Hi, I'm <span className="text-[#]">Paul</span>.
           </h1>
+          <p className={`${styles.heroSubText} drop-shadow-lg`}>
+            I build full stack applications.
+          </p>
         </div>
+        <ComputersCanvas />
       </div>
     </section>
   );
