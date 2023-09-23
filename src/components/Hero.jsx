@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../style";
-import { ComputersCanvas } from "./canvas";
+import { RobotCanvas } from "./canvas";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState(undefined);
@@ -38,7 +38,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <ComputersCanvas />
+      <RobotCanvas />
     </section>
   );
 };

@@ -7,15 +7,11 @@ import {
   useAnimations,
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
-const computer_scene = "./desktop_pc/scene.gltf";
-const cube_scene = "./cube3.0/pauljsyi-cube-3d-logo.gltf";
-const pjsy_scene = "./paul_cube/pauljsyi-cube-3d-logo.gltf";
+
 const robot_scene = "./kuma_heavy_robot_r-9000s/scene.gltf";
 
-const Computers = () => {
+const Robot = () => {
   const group = useRef();
-  // const computer = useGLTF(computer_scene);
-  // console.log({ computer });
 
   const robot = useGLTF(robot_scene);
   const animations = robot.animations;
@@ -50,7 +46,7 @@ const Computers = () => {
   );
 };
 
-const ComputersCanvas = () => {
+const RobotCanvas = () => {
   return (
     <Suspense fallback={<CanvasLoader />}>
       <Canvas
@@ -64,7 +60,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers />
+        <Robot />
 
         <Preload all />
       </Canvas>
@@ -72,4 +68,4 @@ const ComputersCanvas = () => {
   );
 };
 
-export default ComputersCanvas;
+export default RobotCanvas;
