@@ -11,7 +11,7 @@ const Hero = () => {
       const spotlightEl = document.querySelector("#spotlight");
       const { clientX, clientY } = event;
       setMousePosition(event);
-      spotlightEl.style.background = `radial-gradient(circle at ${clientX}px ${clientY}px, rgba(255, 135, 135, .5)
+      spotlightEl.style.background = `radial-gradient(circle at ${clientX}px ${clientY}px, rgba(255, 135, 135, 1)
    5px, transparent 25%)`;
     }
 
@@ -37,8 +37,8 @@ const Hero = () => {
             I build full stack applications.
           </p>
         </div>
-        <ComputersCanvas />
       </div>
+      <ComputersCanvas />
     </section>
   );
 };

@@ -12,7 +12,9 @@
   scroll-behavior: smooth;
   color-scheme: dark;
 }
-
+.mesh {
+  position: absolute;
+}
 #hero {
   background-color: #292d32;
   -webkit-mask-image: url("./assets/dot-mask.svg");
