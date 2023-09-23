@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { styles } from "../style";
+import { styles } from "../styles";
 import { RobotCanvas } from "./canvas";
 
 const Hero = () => {
@@ -23,7 +23,7 @@ const Hero = () => {
   }, [mousePosition]);
 
   return (
-    <section className="w-full h-screen mx-auto ">
+    <section className="w-full h-screen mx-auto snap-start">
       <div className="w-full h-screen mx-auto" id="hero">
         <div id="spotlight"></div>
       </div>

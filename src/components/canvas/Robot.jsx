@@ -10,19 +10,26 @@ import CanvasLoader from "../Loader";
 
 const robot_scene = "./kuma_heavy_robot_r-9000s/scene.gltf";
 
-const Robot = ({ isMobile }) => {
+const Robot = (props) => {
+  const { clicked, setClicked, isMobile } = props;
   const group = useRef();
 
   const robot = useGLTF(robot_scene);
   const animations = robot.animations;
 
   const { actions, names } = useAnimations(animations, group);
+  console.log({ actions });
   useEffect(() => {
     actions[names[0]].reset().fadeIn(0.5).play();
   }, []);
 
+  const handleOnClick = () => {
+    actions[names[0]].reset().fadeIn(0.5).play();
+    setClicked(!clicked);
+  };
+
   return (
-    <mesh className="mesh" ref={group}>
+    <mesh className="mesh" ref={group} onClick={handleOnClick}>
       <hemisphereLight intensity={1} groundColor="white" />
       <pointLight intensity={1} />
       {/* <spotLight
@@ -36,7 +43,7 @@ const Robot = ({ isMobile }) => {
       <primitive
         object={robot.scene}
         scale={isMobile ? 0.0015 : 0.0015}
-        position={isMobile ? [-20, 3, -9] : [0, 0, -3.7]}
+        position={isMobile ? [-20, 0, -7] : [0, 0, -3.7]}
         rotation={[-0.01, -5.2, -0.1]}
       />
     </mesh>
@@ -45,6 +52,7 @@ const Robot = ({ isMobile }) => {
 
 const RobotCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 640px)");
@@ -61,6 +69,7 @@ const RobotCanvas = () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
+
   return (
     <Suspense fallback={<CanvasLoader />}>
       <Canvas
@@ -74,8 +83,7 @@ const RobotCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Robot isMobile={isMobile} />
-
+        <Robot isMobile={isMobile} clicked={clicked} setClicked={setClicked} />
         <Preload all />
       </Canvas>
     </Suspense>

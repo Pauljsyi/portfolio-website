@@ -17,7 +17,7 @@ import("default-passive-events");
 function App() {
   return (
     <BrowserRouter>
-      <div className="relative  bg-primary  ">
+      <div className="relative max-h-screen bg-primary snap-y snap-mandatory overflow-y-scroll ">
         <div className=" bg-center relative">
           <Navbar />
           <Hero />
