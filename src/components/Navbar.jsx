@@ -22,11 +22,29 @@ const navLinks = [
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  // set full screen state
+  const [isFS, setIsFS] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    console.log({ mediaQuery });
+    setIsFS(mediaQuery.matches);
+    const handleMediaQueryChange = (event) => {
+      setIsFS(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, [isFS]);
+
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-transparent `}
+      className={`${styles.paddingX} w-full flex  py-5 fixed  z-20 bg-transparent `}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-around items-center max-w-7xl mx-auto">
         <Link
           to="/"
           className="flex items-center gap-2"
@@ -42,7 +60,11 @@ const Navbar = () => {
         </Link>
 
         {/* FULL SCREEN */}
-        <ul className={` invisible sm:visible list-none flex flex-row gap-10`}>
+        <ul
+          className={` ${
+            !isFS ? null : "hidden"
+          } list-none flex flex-row gap-10`}
+        >
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -56,7 +78,7 @@ const Navbar = () => {
           ))}
         </ul>
         {/* MOBILE */}
-        <div className="sm:hidden  flex flex-1 justify-end items-center">
+        <div className="sm:hidden  ">
           <img
             src={toggle ? close : menu}
             alt="menu"
