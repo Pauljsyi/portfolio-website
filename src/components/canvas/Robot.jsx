@@ -10,36 +10,33 @@ import CanvasLoader from "../Loader";
 
 const robot_scene = "./kuma_heavy_robot_r-9000s/scene.gltf";
 
-const Robot = () => {
+const Robot = ({ isMobile }) => {
   const group = useRef();
 
   const robot = useGLTF(robot_scene);
   const animations = robot.animations;
-  // console.log({ robot });
 
   const { actions, names } = useAnimations(animations, group);
-  console.log({ actions });
-  console.log({ names });
   useEffect(() => {
     actions[names[0]].reset().fadeIn(0.5).play();
   }, []);
 
   return (
     <mesh className="mesh" ref={group}>
-      <hemisphereLight intensity={1} groundColor="black" />
+      <hemisphereLight intensity={1} groundColor="white" />
       <pointLight intensity={1} />
-      <spotLight
+      {/* <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
         intensity={1}
         castShadow
         shadow-mapSize={1024}
-      />
+      /> */}
       <primitive
         object={robot.scene}
-        scale={0.0015}
-        position={[0, 2, -5.25]}
+        scale={isMobile ? 0.0015 : 0.0015}
+        position={isMobile ? [-20, 3, -9] : [0, 0, -3.7]}
         rotation={[-0.01, -5.2, -0.1]}
       />
     </mesh>
@@ -47,6 +44,23 @@ const Robot = () => {
 };
 
 const RobotCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    console.log({ mediaQuery });
+    setIsMobile(mediaQuery.matches);
+    console.log({ isMobile });
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
   return (
     <Suspense fallback={<CanvasLoader />}>
       <Canvas
@@ -60,7 +74,7 @@ const RobotCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Robot />
+        <Robot isMobile={isMobile} />
 
         <Preload all />
       </Canvas>

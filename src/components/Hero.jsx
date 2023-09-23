@@ -16,6 +16,10 @@ const Hero = () => {
     }
 
     document.addEventListener("mousemove", handleMouseMove, { passive: true });
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
   }, [mousePosition]);
 
   return (
@@ -37,8 +41,10 @@ const Hero = () => {
             I build full stack applications.
           </p>
         </div>
+        {/* <div className="absolute left-0 top-0 w-full h-screen">
+          <RobotCanvas />
+        </div> */}
       </div>
-      <RobotCanvas />
     </section>
   );
 };

@@ -8,6 +8,7 @@ import {
   Hero,
   Navbar,
   Tech,
+  RobotCanvas,
   Works,
   StarsCanvas,
 } from "./components";
@@ -20,6 +21,9 @@ function App() {
         <div className=" bg-center relative">
           <Navbar />
           <Hero />
+          <div className="absolute left-0 top-0 w-full h-screen">
+            <RobotCanvas />
+          </div>
         </div>
         <div>
           <About />
