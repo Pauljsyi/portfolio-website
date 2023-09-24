@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 // import { navLinks } from "../constants";
 import { logo1, menu, close } from "../assets";
+import helpers from "../utils/helpers";
 
 const navLinks = [
   {
@@ -20,25 +21,25 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const { mediaQueryFunc } = helpers;
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   // set full screen state
   const [isFS, setIsFS] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 640px)");
-    console.log({ mediaQuery });
-    setIsFS(mediaQuery.matches);
-    const handleMediaQueryChange = (event) => {
-      setIsFS(event.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, [isFS]);
+    // const mediaQuery = window.matchMedia("(max-width: 640px)");
+    // console.log({ mediaQuery });
+    // setIsFS(mediaQuery.matches);
+    // const handleMediaQueryChange = (event) => {
+    //   setIsFS(event.matches);
+    // };
+    // mediaQuery.addEventListener("change", handleMediaQueryChange);
+    // return () => {
+    //   mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    // };
+    mediaQueryFunc("change", setIsFS);
+  }, []);
 
   return (
     <nav

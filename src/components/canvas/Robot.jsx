@@ -7,6 +7,7 @@ import {
   useAnimations,
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
+import helpers from "../../utils/helpers";
 
 const robot_scene = "./kuma_heavy_robot_r-9000s/scene.gltf";
 
@@ -18,7 +19,7 @@ const Robot = (props) => {
   const animations = robot.animations;
 
   const { actions, names } = useAnimations(animations, group);
-  console.log({ actions });
+
   useEffect(() => {
     actions[names[0]].reset().fadeIn(0.5).play();
   }, []);
@@ -51,23 +52,12 @@ const Robot = (props) => {
 };
 
 const RobotCanvas = () => {
+  const { mediaQueryFunc } = helpers;
   const [isMobile, setIsMobile] = useState(false);
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 640px)");
-    console.log({ mediaQuery });
-    setIsMobile(mediaQuery.matches);
-    console.log({ isMobile });
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
+    mediaQueryFunc("change", setIsMobile);
   }, []);
 
   return (
