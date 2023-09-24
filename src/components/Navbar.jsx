@@ -28,22 +28,12 @@ const Navbar = () => {
   const [isFS, setIsFS] = useState(false);
 
   useEffect(() => {
-    // const mediaQuery = window.matchMedia("(max-width: 640px)");
-    // console.log({ mediaQuery });
-    // setIsFS(mediaQuery.matches);
-    // const handleMediaQueryChange = (event) => {
-    //   setIsFS(event.matches);
-    // };
-    // mediaQuery.addEventListener("change", handleMediaQueryChange);
-    // return () => {
-    //   mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    // };
     mediaQueryFunc("change", setIsFS);
   }, []);
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex  py-5 fixed  z-20 bg-transparent `}
+      className={`${styles.paddingX} w-full flex  py-5 fixed  z-20 bg-black `}
     >
       <div className="w-full flex justify-around items-center max-w-7xl mx-auto">
         <Link

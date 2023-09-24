@@ -7,7 +7,7 @@ import {
   Feedbacks,
   Hero,
   Navbar,
-  Tech,
+  TechCloud,
   RobotCanvas,
   Works,
   StarsCanvas,
@@ -27,6 +27,7 @@ function App() {
         </div>
         <div>
           <About />
+          <TechCloud />
           <Experience />
           <Works />
           <Feedbacks />

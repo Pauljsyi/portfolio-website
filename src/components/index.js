@@ -7,12 +7,14 @@ import Experience from "./Experience";
 import Works from "./Works";
 import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
+import TechCloud from "./TechCloud";
 
 export {
   Hero,
   Navbar,
   About,
   Tech,
+  TechCloud,
   Experience,
   Works,
   Feedbacks,
