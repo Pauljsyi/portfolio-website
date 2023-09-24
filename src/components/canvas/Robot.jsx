@@ -6,7 +6,7 @@ import {
   useGLTF,
   useAnimations,
 } from "@react-three/drei";
-import CanvasLoader from "../Loader";
+
 import helpers from "../../utils/helpers";
 
 const robot_scene = "./kuma_heavy_robot_r-9000s/scene.gltf";
@@ -61,22 +61,20 @@ const RobotCanvas = () => {
   }, []);
 
   return (
-    <Suspense fallback={<CanvasLoader />}>
-      <Canvas
-        frameLoop="demand"
-        shadows
-        camera={{ position: [20, 3, 5], fov: 25 }}
-        gl={{ preserverDrawingBuffer: true }}
-      >
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Robot isMobile={isMobile} clicked={clicked} setClicked={setClicked} />
-        <Preload all />
-      </Canvas>
-    </Suspense>
+    <Canvas
+      frameLoop="demand"
+      shadows
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserverDrawingBuffer: true }}
+    >
+      <OrbitControls
+        enableZoom={false}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+      />
+      <Robot isMobile={isMobile} clicked={clicked} setClicked={setClicked} />
+      <Preload all />
+    </Canvas>
   );
 };
 
