@@ -1,5 +1,8 @@
 import { useEffect, useState, useMemo } from "react";
-// import "../styles/TextSphere.css"
+import { motion } from "framer-motion";
+
+import { Wrapper } from "./hoc";
+import { fadeIn, textVariant } from "../utils/motion";
 import TagCloud from "TagCloud";
 import { styles } from "../styles";
 const container = ".tagcloud";
@@ -36,7 +39,7 @@ const techs = [
   "GSAP",
 ];
 const options = {
-  radius: 400,
+  radius: 350,
   maxSpeed: "normal",
   keep: false,
 };
@@ -61,18 +64,21 @@ const TechCloud = () => {
     // return tech.destroy();
   }, []);
   return (
-    <div className="flex justify-center mt-20 ">
+    <motion.div
+      className="flex justify-center 2xl:mt-[5px] "
+      variants={textVariant()}
+    >
       <div className={`text-sphere ${styles.sectionSubText} text-center`}>
         <h1
-          className={`"font-small lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]"text-center`}
+          className={`font-small lg:text-[26px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center`}
         >
           What I have worked with so far
         </h1>
         {/* span tag with classname tagcloud to work */}
         <span className="tagcloud" id="techcloud"></span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default TechCloud;
+export default Wrapper(TechCloud, "techcloud");

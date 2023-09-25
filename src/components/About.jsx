@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-// import tilt from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-// import { services } from "../constants";
+import { Wrapper } from "./hoc";
+
 import { fadeIn, textVariant } from "../utils/motion";
 import helpers from "../utils/helpers";
 
@@ -14,12 +14,20 @@ const About = () => {
   }, []);
 
   return (
-    <motion.div className={`${isFS ? "" : "grid grid-cols-3 gap-4"} mx-5 `}>
-      <motion.div className="mt-20 col-span-1" variants={textVariant()}>
-        <p className={`${styles.sectionSubText} flex`}>whoami</p>
+    <motion.div className={`${isFS ? "" : "grid grid-cols-3 gap-4"}   `}>
+      <motion.div
+        className="mt-20 col-span-1 flex justify-end"
+        variants={textVariant()}
+      >
+        <p
+          // className={`font-small lg:text-[26px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center flex`}
+          className={`${styles.sectionHeadText} text-secondary mr-[15px]`}
+        >
+          whoami
+        </p>
       </motion.div>
       <motion.p
-        className="mt-20 col-span-2  text-[17px] max-w-3xl leading-[30px]"
+        className="mt-20 col-span-2  text-[16px] max-w-3xl leading-[30px] flex justify-end"
         variants={fadeIn("", "", 0.1, 1)}
       >
         Hi, my name is Paul Yi. I am a Full Stack Developer with experience in
@@ -38,4 +46,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Wrapper(About, "about");

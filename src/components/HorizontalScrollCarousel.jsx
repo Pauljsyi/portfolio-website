@@ -1,5 +1,6 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
+import { styles } from "../styles";
 import {
   coffeazy,
   paradigmguitar,
@@ -13,10 +14,13 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-73%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-78.5%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-neutral-900 ">
+      <h1 className={`${styles.sectionHeadText} lowercase text-center`}>
+        Here are some of my work
+      </h1>
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div
           className="flex gap-4"

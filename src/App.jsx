@@ -29,8 +29,10 @@ function App() {
           </div>
           <div>
             <About />
-            <TechCloud />
-            <Experience />
+            <div className={`2xl:grid-cols-2 grid grid-cols-1  mt-80 `}>
+              <Experience />
+              <TechCloud />
+            </div>
             <Works />
           </div>
           <div>
