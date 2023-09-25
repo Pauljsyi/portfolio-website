@@ -56,7 +56,7 @@ const VerticalTabs = () => {
       <TabsHeader className="max-w-screen-sm">
         {data.map(({ label, value }) => (
           <Tab
-            className={` flex justify-end mb-5 uppercase ${
+            className={`z-0 flex justify-end mb-5 uppercase ${
               activeTab === value ? "text-[#FF8787]" : ""
             } `}
             onClick={() => setActiveTab(value)}

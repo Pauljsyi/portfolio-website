@@ -13,7 +13,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-73%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-73%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-neutral-900 ">
@@ -37,7 +37,7 @@ const Card = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[600px] w-[1100px] overflow-hidden bg-neutral-200  "
+      className="group relative h-[600px] w-[60vw] overflow-hidden bg-neutral-200  "
     >
       <div
         style={{

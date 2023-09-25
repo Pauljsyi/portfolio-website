@@ -32,7 +32,6 @@ function App() {
             <TechCloud />
             <Experience />
             <Works />
-            <Feedbacks />
           </div>
           <div>
             <Contact />
