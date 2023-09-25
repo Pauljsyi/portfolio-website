@@ -1,5 +1,11 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
+import {
+  coffeazy,
+  paradigmguitar,
+  klickklack,
+  weddingplanner,
+} from "../assets/index";
 
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
@@ -7,12 +13,17 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-73%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
+    <section ref={targetRef} className="relative h-[300vh] bg-neutral-900 ">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4">
+        <motion.div
+          className="flex gap-4"
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          style={{ x }}
+        >
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
           })}
@@ -26,7 +37,7 @@ const Card = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[500px] w-[800px] overflow-hidden bg-neutral-200"
+      className="group relative h-[600px] w-[1100px] overflow-hidden bg-neutral-200  "
     >
       <div
         style={{
@@ -37,7 +48,7 @@ const Card = ({ card }) => {
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
       ></div>
       <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
+        <p className="bg-gradient-to-br from-black/20 to-black/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-sm">
           {card.title}
         </p>
       </div>
@@ -49,38 +60,38 @@ export default HorizontalScrollCarousel;
 
 const cards = [
   {
-    url: "/imgs/abstract/1.jpg",
-    title: "coffeazy",
+    url: coffeazy,
+    title: "Coffeazy",
     id: 1,
   },
   {
-    url: "/imgs/abstract/2.jpg",
+    url: klickklack,
     title: "Klick Klack",
     id: 2,
   },
   {
-    url: "/imgs/abstract/3.jpg",
-    title: "Title 3",
+    url: paradigmguitar,
+    title: "Paradigm Guitar",
     id: 3,
   },
   {
-    url: "/imgs/abstract/4.jpg",
-    title: "Title 4",
+    url: weddingplanner,
+    title: "Wedding Planner",
     id: 4,
   },
-  {
-    url: "/imgs/abstract/5.jpg",
-    title: "Title 5",
-    id: 5,
-  },
-  {
-    url: "/imgs/abstract/6.jpg",
-    title: "Title 6",
-    id: 6,
-  },
-  {
-    url: "/imgs/abstract/7.jpg",
-    title: "Title 7",
-    id: 7,
-  },
+  // {
+  //   url: "/imgs/abstract/5.jpg",
+  //   title: "Title 5",
+  //   id: 5,
+  // },
+  // {
+  //   url: "/imgs/abstract/6.jpg",
+  //   title: "Title 6",
+  //   id: 6,
+  // },
+  // {
+  //   url: "/imgs/abstract/7.jpg",
+  //   title: "Title 7",
+  //   id: 7,
+  // },
 ];

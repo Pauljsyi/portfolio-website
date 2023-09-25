@@ -10,7 +10,7 @@ import { styles } from "../styles";
 import { after } from "lodash";
 
 const VerticalTabs = () => {
-  const [activeTab, setActiveTab] = useState("html");
+  const [activeTab, setActiveTab] = useState("crossed");
   const data = [
     {
       label: "Crossed",
@@ -49,14 +49,14 @@ const VerticalTabs = () => {
 
   return (
     <Tabs
-      className="h-[657px] max-w-screen-xl mx-auto mt-16"
+      className="h-[657px] max-w-screen-xl mx-auto mt-16 justify-center"
       value={activeTab}
       orientation="vertical"
     >
-      <TabsHeader className="w-60">
+      <TabsHeader className="max-w-screen-sm">
         {data.map(({ label, value }) => (
           <Tab
-            className={` flex justify-end mb-5 ${
+            className={` flex justify-end mb-5 uppercase ${
               activeTab === value ? "text-[#FF8787]" : ""
             } `}
             onClick={() => setActiveTab(value)}
@@ -67,12 +67,16 @@ const VerticalTabs = () => {
           </Tab>
         ))}
       </TabsHeader>
-      <TabsBody>
+      <TabsBody className="max-w-screen-md">
         {data.map(({ value, position, dates, desc }, indx) => (
-          <TabPanel key={value} value={value} className="py-0 ">
+          <TabPanel key={value} value={value} className={` py-0`}>
+            <div className="mx-12">
+              <p>{position}</p>
+              <p>{dates}</p>
+            </div>
             <ul>
               {desc.map((item, indx) => (
-                <div className="flex">
+                <div className="flex sm:text-[16px] text-[14px] text-secondary lowercase tracking-wider">
                   <span className="mx-5">&#8226;</span>
                   <li>{item}</li>
                 </div>

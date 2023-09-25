@@ -32,7 +32,17 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+// project assets
+import coffeazy from "./projects/coffeazy.png";
+import paradigmguitar from "./projects/paradigmguitar.png";
+import klickklack from "./projects/klickklack.png";
+import weddingplanner from "./projects/weddingplanner.png";
+
 export {
+  coffeazy,
+  paradigmguitar,
+  klickklack,
+  weddingplanner,
   logo,
   logo1,
   logo2,
