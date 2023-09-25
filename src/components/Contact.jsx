@@ -6,13 +6,34 @@ import { Wrapper } from "./hoc";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { slideIn } from "../utils/motion";
+const PUBLIC_KEY = import.meta.env.REACT_APP_EMAIL_PUBLIC_KEY;
+const SERVICE_ID = import.meta.env.REACT_APP_EMAIL_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.REACT_APP_EMAIL_TEMPLATE_ID;
 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
-  const handleChange = (e) => {};
-  const handleSubmit = (e) => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs.send(
+      "service_iuy4o7g",
+      "template_6qr4tw8",
+      {
+        from_name: form.name,
+        to_name: "Paul",
+        from_email: form.email,
+        to_email: "pauljsyi@gmail.com",
+        message: form.message,
+      },
+      "D0ahM4ki2k3JxooDc"
+    );
+  };
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-w-[900px] justify-end">
       <motion.div
