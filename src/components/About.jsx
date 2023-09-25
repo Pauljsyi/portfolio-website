@@ -14,7 +14,9 @@ const About = () => {
   }, []);
 
   return (
-    <motion.div className={`${isFS ? "" : "grid grid-cols-3 gap-4"}   `}>
+    <motion.div
+      className={`${isFS ? "" : "grid grid-cols-3 gap-4"}  snap-start `}
+    >
       <motion.div
         className="mt-20 col-span-1 flex justify-end"
         variants={textVariant()}

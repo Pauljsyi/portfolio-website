@@ -9,10 +9,11 @@ import { slideIn } from "../utils/motion";
 const PUBLIC_KEY = import.meta.env.REACT_APP_EMAIL_PUBLIC_KEY;
 const SERVICE_ID = import.meta.env.REACT_APP_EMAIL_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.REACT_APP_EMAIL_TEMPLATE_ID;
+const initialValue = { name: "", email: "", message: "" };
 
 const Contact = () => {
   const formRef = useRef();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState(initialValue);
   const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,24 +22,35 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    emailjs.send(
-      "service_iuy4o7g",
-      "template_6qr4tw8",
-      {
-        from_name: form.name,
-        to_name: "Paul",
-        from_email: form.email,
-        to_email: "pauljsyi@gmail.com",
-        message: form.message,
-      },
-      "D0ahM4ki2k3JxooDc"
-    );
+    emailjs
+      .send(
+        "service_iuy4o7g",
+        "template_6qr4tw8",
+        {
+          from_name: form.name,
+          to_name: "Paul",
+          from_email: form.email,
+          to_email: "pauljsyi@gmail.com",
+          message: form.message,
+        },
+        "D0ahM4ki2k3JxooDc"
+      )
+      .then(() => {
+        setLoading(false);
+        alert("Thank you. I will get back to you as soon as possible.");
+        setForm(initialValue);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.error({ error });
+        alert("Something went wrong.");
+      });
   };
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-w-[900px] justify-end">
+    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-w-screen justify-center">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] p-8 bg-[#080E15]"
+        className="flex-[0.75] p-8 bg-[#080E15] justify-center"
       >
         <h3 className={styles.sectionHeadText}>contact</h3>
         <form

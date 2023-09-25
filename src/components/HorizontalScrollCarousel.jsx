@@ -19,7 +19,7 @@ const HorizontalScrollCarousel = () => {
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-neutral-900 ">
       <h1 className={`${styles.sectionHeadText} lowercase text-center`}>
-        Here are some of my work
+        Here's some of my work
       </h1>
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div
