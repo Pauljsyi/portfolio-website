@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 import DialogModal from "./DialogModal";
 import helpers from "../utils/helpers";
+import { github } from "../assets/index";
 import {
   Button,
   Dialog,
@@ -44,7 +45,7 @@ const HorizontalScroll = () => {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    isFS ? ["5%", "-70%"] : ["12%", "-63.5%"]
+    isFS ? ["5%", "-70%"] : ["5%", "-63.5%"]
   );
   // const handleClick = () => {
   //   handleOpen();
@@ -112,54 +113,48 @@ const HorizontalScroll = () => {
       </div>
 
       <Dialog
-        className="w-[1000px] place-items-center"
-        size="sm"
+        className="w-[1000px] place-items-center border-[2px]"
+        size="lg"
         open={open}
         handler={handleOpen}
       >
         <DialogHeader className="justify-between">
           <div className="flex items-center gap-3">
-            <Avatar
+            {/* <Avatar
               size="sm"
               variant="circular"
               alt="tania andrew"
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-            />
+            /> */}
             <div className="-mt-px flex flex-col">
               <Typography
                 variant="small"
                 color="blue-gray"
                 className="font-medium"
               >
-                Tania Andrew
+                {currProject.title}
               </Typography>
               <Typography
                 variant="small"
                 color="gray"
                 className="text-xs font-normal"
               >
-                @canwu
+                @pauljsyi
               </Typography>
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <IconButton
-              variant="text"
-              size="sm"
-              // color={isFavorite ? "red" : "blue-gray"}
-              // onClick={handleIsFavorite}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-5 w-5"
-              >
-                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-              </svg>
-            </IconButton>
-            <Button color="green" size="sm">
-              Free Download
+            {currProject.site === "" ? (
+              "under construction"
+            ) : (
+              <p size="lg">
+                <a href={currProject.site} target="_blank">
+                  link to site
+                </a>
+              </p>
+            )}
+            <Button size="xl" onClick={handleOpen}>
+              <h1 className="text-[30px]">X</h1>
             </Button>
           </div>
         </DialogHeader>
@@ -169,23 +164,27 @@ const HorizontalScroll = () => {
             className="h-[48rem] w-full object-cover object-center"
             src={currProject.url}
           />
+          <div
+            className={`absolute top-0 left-0 backdrop-blur-sm backdrop-brightness-50  grayscale-[40%] w-[100%] h-[100%]`}
+          >
+            <Typography
+              color="blue-gray"
+              className={`font-small mx-[100px] mt-[50px]`}
+            >
+              {currProject.desc}
+            </Typography>
+          </div>
         </DialogBody>
         <DialogFooter className="justify-between">
           <div className="flex items-center gap-16">
             <div>
-              <Typography variant="small" color="gray" className="font-normal">
-                Views
-              </Typography>
-              <Typography color="blue-gray" className="font-medium">
-                44,082,044
+              <Typography variant="small" color="white" className="font-normal">
+                The Stack:
               </Typography>
             </div>
             <div>
-              <Typography variant="small" color="gray" className="font-normal">
-                Downloads
-              </Typography>
-              <Typography color="blue-gray" className="font-medium">
-                553,031
+              <Typography variant="small" color="white" className="font-normal">
+                {currProject.stack + ", "}
               </Typography>
             </div>
           </div>
@@ -193,21 +192,16 @@ const HorizontalScroll = () => {
             size="sm"
             variant="outlined"
             color="blue-gray"
-            className="flex items-center gap-3"
+            className="flex flex-row items-center gap-3"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-4 w-4"
+            <a
+              className="flex flex-row items-center "
+              href={currProject.gh}
+              target="_blank"
             >
-              <path
-                fillRule="evenodd"
-                d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
-                clipRule="evenodd"
-              />
-            </svg>
-            Share
+              <img className="w-[25px] mr-[10px]" src={github} alt="github" />
+              <p>github</p>
+            </a>
           </Button>
         </DialogFooter>
       </Dialog>
