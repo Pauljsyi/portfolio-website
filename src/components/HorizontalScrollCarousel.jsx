@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 import DialogModal from "./DialogModal";
+import helpers from "../utils/helpers";
 import {
   Button,
   Dialog,
@@ -23,17 +24,26 @@ import {
 } from "../assets/index";
 
 const HorizontalScrollCarousel = () => {
+  const { mediaQueryFunc } = helpers;
   const [open, setOpen] = useState(false);
-  const [close, setClose] = useState(false);
+  // const [close, setClose] = useState(false);
   const [currProject, setCurrProject] = useState({});
   const targetRef = useRef(null);
+  const [isFS, setIsFS] = useState(false);
+  useEffect(() => {
+    mediaQueryFunc("change", 640, setIsFS);
+  }, []);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
   console.log("current project in HSC!!!", { currProject });
   const handleOpen = () => setOpen((cur) => !cur);
 
-  const x = useTransform(scrollYProgress, [0, 1], ["3%", "-75.5%"]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isFS ? ["5%", "-70%"] : ["12%", "-63.5%"]
+  );
   // const handleClick = () => {
   //   handleOpen();
   //   setCurrProject(card);
@@ -43,10 +53,10 @@ const HorizontalScrollCarousel = () => {
     <section
       id="horizontalscrollcarousel"
       ref={targetRef}
-      className="relative h-[300vh] bg-neutral-900 "
+      className="relative h-[400vh]"
     >
       <h1 className={`${styles.sectionHeadText} lowercase text-center`}>
-        Here's some of my work
+        Here's some of my work.
       </h1>
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div
@@ -72,7 +82,7 @@ const HorizontalScrollCarousel = () => {
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                     }}
-                    className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+                    className="absolute inset-0 z-0 transition-transform duration-300 blur-sm grayscale-[40%] group-hover:scale-110  group-hover:filter-none"
                   ></div>
                   <div className="absolute inset-0 z-10 grid place-content-center">
                     <p className="bg-gradient-to-br from-black/20 to-black/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-sm">

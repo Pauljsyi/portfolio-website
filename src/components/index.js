@@ -8,6 +8,7 @@ import Works from "./Works";
 import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import TechCloud from "./TechCloud";
+import TechCloudMobile from "./TechCloudMobile";
 
 export {
   Hero,
@@ -15,6 +16,7 @@ export {
   About,
   Tech,
   TechCloud,
+  TechCloudMobile,
   Experience,
   Works,
   Feedbacks,

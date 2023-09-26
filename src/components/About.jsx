@@ -10,12 +10,14 @@ const About = () => {
   const { mediaQueryFunc } = helpers;
   const [isFS, setIsFS] = useState(false);
   useEffect(() => {
-    mediaQueryFunc("change", setIsFS);
+    mediaQueryFunc("change", 880, setIsFS);
   }, []);
 
   return (
     <motion.div
-      className={`${isFS ? "" : "grid grid-cols-3 gap-4"}  snap-start `}
+      className={`${
+        isFS ? "" : "grid grid-cols-3 gap-4"
+      }  snap-start mt-[100px]`}
     >
       <motion.div
         className="mt-20 col-span-1 flex justify-end"
@@ -25,7 +27,7 @@ const About = () => {
           // className={`font-small lg:text-[26px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center flex`}
           className={`${styles.sectionHeadText} text-secondary mr-[15px]`}
         >
-          whoami
+          whoami.
         </p>
       </motion.div>
       <motion.p

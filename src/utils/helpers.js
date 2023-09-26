@@ -1,5 +1,5 @@
-const mediaQueryFunc = (e, func) => {
-  const mediaQuery = window.matchMedia("(max-width: 640px)");
+const mediaQueryFunc = (e, screen, func) => {
+  const mediaQuery = window.matchMedia(`(max-width: ${screen}px)`);
   func(mediaQuery.matches);
   const handleMediaQueryChange = (event) => {
     func(event.matches);

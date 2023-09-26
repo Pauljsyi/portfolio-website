@@ -38,6 +38,13 @@
   /* z-index: 0; */
 }
 
+#about-me-container,
+#horizontalscrollcarousel {
+  background-color: #292d32;
+  -webkit-mask-image: url("./assets/noise-mask.jpg");
+  mask-image: url("./assets/noise-mask.jpg");
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

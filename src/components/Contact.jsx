@@ -47,12 +47,12 @@ const Contact = () => {
       });
   };
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-w-screen justify-center">
+    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-w-screen max-h-screen justify-center">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] p-8 bg-[#080E15] justify-center"
+        className="flex-[0.75] p-8 bg-[#080E15] justify-center "
       >
-        <h3 className={styles.sectionHeadText}>contact</h3>
+        <h3 className={styles.sectionHeadText}>contact.</h3>
         <form
           ref={formRef}
           onSubmit={handleSubmit}

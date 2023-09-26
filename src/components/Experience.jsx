@@ -8,14 +8,15 @@ import { fadeIn, textVariant } from "../utils/motion";
 const Experience = () => {
   return (
     <motion.div
-      className={`xl:h-[550px] 2xl:mt-[5px]  ${styles.sectionSubText}`}
+      className={`xl:h-[50px] 2xl:mt-[5px] ${styles.sectionSubText}`}
       variants={textVariant()}
     >
-      <h1
-        className={`font-small lg:text-[26px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center`}
+      <p
+        // className={`font-small lg:text-[26px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center flex`}
+        className={`${styles.sectionHeadText} lowercase text-secondary mr-[15px]`}
       >
-        Where I've worked
-      </h1>
+        where i've worked.
+      </p>
       <VerticalTabs />
     </motion.div>
   );

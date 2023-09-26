@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
+import helpers from "./utils/helpers";
 
 import {
   About,
@@ -7,6 +9,7 @@ import {
   Hero,
   Navbar,
   TechCloud,
+  TechCloudMobile,
   RobotCanvas,
   Works,
   StarsCanvas,
@@ -14,9 +17,15 @@ import {
 import("default-passive-events");
 
 function App() {
+  const { mediaQueryFunc } = helpers;
+  const [isFS, setIsFS] = useState(false);
+
+  useEffect(() => {
+    mediaQueryFunc("change", 945, setIsFS);
+  }, [isFS]);
   return (
     <BrowserRouter>
-      <div className="relative max-h-screen bg-primary snap-y snap-mandatory ">
+      <div className="relative max-h-screen bg-primary snap-y snap-mandatory">
         <div className=" bg-center relative">
           <Navbar />
           <Hero />
@@ -24,17 +33,23 @@ function App() {
             <RobotCanvas />
           </div>
         </div>
-        <div>
+        <div id="about-me-container">
           <About />
-          <div className={`2xl:grid-cols-2 grid grid-cols-1  mt-80 `}>
+          <div
+            className={`2xl:grid-cols-2 grid grid-cols-1  lg:mt-80 `}
+            id="experience"
+          >
             <Experience />
-            <TechCloud />
+            {isFS ? (
+              <TechCloudMobile mobile={200} />
+            ) : (
+              <TechCloud fullscreen={500} />
+            )}
           </div>
           <Works />
         </div>
         <div>
           <Contact />
-          <StarsCanvas />
         </div>
       </div>
     </BrowserRouter>

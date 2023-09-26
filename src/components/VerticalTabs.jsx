@@ -52,7 +52,7 @@ const VerticalTabs = () => {
   const [isFS, setIsFS] = useState(false);
 
   useEffect(() => {
-    mediaQueryFunc("change", setIsFS);
+    mediaQueryFunc("change", 1033, setIsFS);
   }, [isFS]);
 
   return (
@@ -79,14 +79,16 @@ const VerticalTabs = () => {
           </Tab>
         ))}
       </TabsHeader>
-      <TabsBody className="max-w-screen-md">
+      <TabsBody
+        className={`lg:w-[900px] max-w-screen-md  mt-[-10px] ml-[-25px]`}
+      >
         {data.map(({ value, position, dates, desc }, indx) => (
           <TabPanel key={value} value={value}>
             <div className="ml-12 mt-[-10px]">
-              <h1 className=" font-small lg:text-[26px] sm:text-[20px] xs:text-[20px] text-[16px] lg:leading-[40px] pt-[5px]">
+              <h1 className=" font-small text-white lg:text-[26px] sm:text-[20px] xs:text-[20px] text-[16px] lg:leading-[40px] ">
                 {position}
               </h1>
-              <p className="mb-5">{dates}</p>
+              <p className="mb-5 text-white">{dates}</p>
             </div>
             <ul>
               {desc.map((item, indx) => (

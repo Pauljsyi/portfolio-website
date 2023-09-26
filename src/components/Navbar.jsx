@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 // import { navLinks } from "../constants";
@@ -24,15 +24,39 @@ const navLinks = [
   },
 ];
 
+/**
+ * Hook that alerts clicks outside of the passed ref
+ */
+function useOutsideAlerter(ref, state, setState) {
+  useEffect(() => {
+    /**
+     * Alert if clicked on outside of element
+     */
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setState(false);
+      }
+    }
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+}
+
 const Navbar = () => {
+  const wrapperRef = useRef(null);
   const { mediaQueryFunc } = helpers;
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   // set full screen state
   const [isFS, setIsFS] = useState(false);
+  useOutsideAlerter(wrapperRef, toggle, setToggle);
 
   useEffect(() => {
-    mediaQueryFunc("change", setIsFS);
+    mediaQueryFunc("change", 640, setIsFS);
   }, []);
 
   return (
@@ -76,13 +100,17 @@ const Navbar = () => {
             src={toggle ? close : menu}
             alt="menu"
             className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
+            onClick={() => {
+              setToggle(!toggle);
+            }}
+            ref={wrapperRef}
           />
 
           <div
             className={`${
               !toggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
+            ref={wrapperRef}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navLinks.map((link) => (

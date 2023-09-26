@@ -1,0 +1,31 @@
+diff --git a/node_modules/TagCloud/dist/TagCloud.d.ts b/node_modules/TagCloud/dist/TagCloud.d.ts
+index bd50e04..03ebdbf 100644
+--- a/node_modules/TagCloud/dist/TagCloud.d.ts
++++ b/node_modules/TagCloud/dist/TagCloud.d.ts
+@@ -36,8 +36,8 @@ export default function (
+     options?: TagCloudOptions
+ ): TagCloud;
+ 
+-export default function (
+-    container: Array<Element>,
+-    texts: Array<string>,
+-    options?: TagCloudOptions
+-): Array<TagCloud> | TagCloud;
++// export default function (
++//     container: Array<Element>,
++//     texts: Array<string>,
++//     options?: TagCloudOptions
++// ): Array<TagCloud> | TagCloud;
+diff --git a/node_modules/TagCloud/src/index.js b/node_modules/TagCloud/src/index.js
+index d0fd2f6..21d1cb5 100644
+--- a/node_modules/TagCloud/src/index.js
++++ b/node_modules/TagCloud/src/index.js
+@@ -98,7 +98,7 @@ class TagCloud {
+         itemEl.className = self.config.itemClass;
+         if (self.config.useItemInlineStyles) {
+             itemEl.style.willChange = 'transform, opacity, filter';
+-            itemEl.style.position = 'absolute';
++            itemEl.style.position = 'relative';
+             itemEl.style.top = '50%';
+             itemEl.style.left = '50%';
+             itemEl.style.zIndex = index + 1;

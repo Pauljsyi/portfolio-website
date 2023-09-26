@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -43,9 +43,9 @@ const Robot = (props) => {
       /> */}
       <primitive
         object={robot.scene}
-        scale={isMobile ? 0.0015 : 0.0015}
-        position={isMobile ? [-20, 0, -7] : [0, 0, -3.7]}
-        rotation={[-0.01, -5.2, -0.1]}
+        scale={isMobile ? 0.002 : 0.0015}
+        position={isMobile ? [-15, -4, -7] : [0, 0, -3.7]}
+        rotation={[-0.01, -4.3, -0.1]}
       />
     </mesh>
   );
@@ -57,7 +57,7 @@ const RobotCanvas = () => {
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    mediaQueryFunc("change", setIsMobile);
+    mediaQueryFunc("change", 640, setIsMobile);
   }, []);
 
   return (
@@ -68,9 +68,10 @@ const RobotCanvas = () => {
       gl={{ preserverDrawingBuffer: true }}
     >
       <OrbitControls
+        enableRotate={isMobile ? false : true}
         enableZoom={false}
         maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2.5}
       />
       <Robot isMobile={isMobile} clicked={clicked} setClicked={setClicked} />
       <Preload all />

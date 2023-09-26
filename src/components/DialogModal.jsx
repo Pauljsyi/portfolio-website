@@ -43,11 +43,13 @@ const DialogModal = ({ currProject, open, setOpen, handleOpen }) => {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <p size="lg">
-            <a href={card.site} target="_blank">
-              visit live site
-            </a>
-          </p>
+          {card.site === "" ? null : (
+            <p size="lg">
+              <a href={card.site} target="_blank">
+                link to site
+              </a>
+            </p>
+          )}
           <Button size="xl" onClick={handleOpen}>
             <h1 className="text-[30px]">X</h1>
           </Button>

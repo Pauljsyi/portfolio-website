@@ -7,11 +7,8 @@ import TagCloud from "TagCloud";
 import { styles } from "../styles";
 
 const TechCloud = () => {
-  const { mediaQueryFunc } = helpers;
-  const [isFS, setIsFS] = useState(false);
   useEffect(() => {
-    mediaQueryFunc("change", setIsFS);
-    console.log("isFS in TECHCLOUD LINE 14", isFS);
+    console.log("TECH CLOUD FULL SCREEN IS RENDERED");
     const container = ".tagcloud";
     const techs = [
       "HTML",
@@ -51,36 +48,31 @@ const TechCloud = () => {
     //   keep: false,
     // };
     const tech = TagCloud(container, techs, {
-      radius: isFS ? 190 : 400,
+      radius: 400,
       maxSpeed: "normal",
       keep: false,
     });
-    console.log({ tech });
-    console.log("isarray?", Array.isArray(tech));
-    console.log("length", tech.length);
     if (tech.length) {
       let numToDestroy = tech.length;
 
       for (let i = 0; i < numToDestroy; i++) {
         tech[i].destroy();
       }
-
-      console.log("tech length", tech.length, tech);
     }
-
     // console.log("tagcloud", TagCloud(container, techs, options).destroy);
-  }, [isFS]);
+  }, []);
   return (
     <motion.div
-      className="flex justify-center 2xl:mt-[5px] "
+      className="flex justify-center 2xl:mt-[5px] md:mt-[400px] md:justify-end"
       variants={textVariant()}
     >
-      <div className={`text-sphere ${styles.sectionSubText} text-center`}>
-        <h1
-          className={`font-small lg:text-[26px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center`}
+      <div className={`text-sphere ${styles.sectionSubText} text-center `}>
+        <p
+          // className={`font-small lg:text-[26px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center flex`}
+          className={`${styles.sectionHeadText} lowercase text-left text-secondary mr-[15px]`}
         >
-          What I have worked with so far
-        </h1>
+          what i know so far.
+        </p>
         {/* span tag with classname tagcloud to work */}
         <div className="tagcloud"></div>
       </div>
