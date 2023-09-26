@@ -14,7 +14,6 @@ import { github } from "../assets/index";
 
 const DialogModal = ({ currProject, open, setOpen, handleOpen }) => {
   const card = currProject;
-  console.log("dialogModal!!!!!!!", { currProject }, { open });
   return (
     <Dialog
       size="small"
@@ -43,7 +42,9 @@ const DialogModal = ({ currProject, open, setOpen, handleOpen }) => {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          {card.site === "" ? null : (
+          {card.site === "" ? (
+            "under construction"
+          ) : (
             <p size="lg">
               <a href={card.site} target="_blank">
                 link to site
@@ -62,28 +63,40 @@ const DialogModal = ({ currProject, open, setOpen, handleOpen }) => {
           src={card.url}
         />
         <div
-          className={`absolute top-0 left-0 backdrop-blur-sm backdrop-brightness-50  w-[100%] h-[100%]`}
+          className={`absolute top-0 left-0 backdrop-blur-sm backdrop-brightness-50  grayscale-[40%] w-[100%] h-[100%]`}
         >
-          <Typography color="blue-gray" className={`font-small`}>
+          <Typography
+            color="blue-gray"
+            className={`font-small mx-[100px] mt-[50px]`}
+          >
             {card.desc}
           </Typography>
+          {/* <Typography
+            color="blue-gray"
+            className={`font-small mx-[100px] mt-[50px]`}
+          >
+            {card.stack + ", "}
+          </Typography>
+          <Typography
+            color="blue-gray"
+            className={`font-small mx-[100px] mt-[50px]`}
+          >
+            {card.desc}
+          </Typography> */}
         </div>
       </DialogBody>
       <DialogFooter className="justify-between">
         <div className="flex items-center gap-16">
-          {/* <div>
-            <Typography variant="small" color="gray" className="font-normal">
-              Views
+          <div>
+            <Typography variant="small" color="white" className="font-normal">
+              The Stack:
             </Typography>
           </div>
           <div>
-            <Typography variant="small" color="gray" className="font-normal">
-              Downloads
+            <Typography variant="small" color="white" className="font-normal">
+              {card.stack + ", "}
             </Typography>
-            <Typography color="blue-gray" className="font-medium">
-              553,031
-            </Typography>
-          </div> */}
+          </div>
         </div>
         <Button
           size="sm"

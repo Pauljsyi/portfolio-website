@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-w-screen max-h-screen justify-center">
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
+        variants={slideIn("right", "tween", 0.5, 1.5)}
         className="flex-[0.75] p-8 bg-[#080E15] justify-center "
       >
         <h3 className={styles.sectionHeadText}>contact.</h3>
