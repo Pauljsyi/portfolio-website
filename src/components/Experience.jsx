@@ -23,4 +23,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Wrapper(Experience, "experience");

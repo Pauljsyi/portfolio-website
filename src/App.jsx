@@ -27,24 +27,24 @@ function App() {
   return (
     <BrowserRouter>
       <div className="relative max-h-screen bg-primary snap-y snap-mandatory">
-        <div className=" bg-center relative">
+        <div className=" bg-center relative snap-start">
           <Navbar />
           <Hero />
           <div className="absolute left-0 top-0 w-full h-screen">
             <RobotCanvas />
           </div>
         </div>
-        <div id="about-me-container" className="">
-          <div className=" pt-[50px] " id="about">
+        <div id="about-me-container">
+          <div className=" pt-[50px] snap-start" id="about">
             <About />
           </div>
           <div
-            className={`2xl:grid-cols-2 grid grid-cols-1  mb-[50px]`}
+            className={`2xl:grid-cols-2 grid grid-cols-1  mb-[50px] snap-start`}
             id="experience"
           >
             <Experience />
             <div
-              className=" flex justify-center align-center pt-[150px]"
+              className=" flex justify-center align-center pt-[150px] snap-start"
               id="skills"
             >
               {isFS ? (

@@ -48,7 +48,7 @@ const Contact = () => {
   };
   return (
     <div
-      className="xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-w-screen max-h-screen justify-center "
+      className="xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-w-screen max-h-screen justify-center snap-start "
       id="contact"
     >
       <motion.div
@@ -107,4 +107,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Wrapper(Contact, "contact");
