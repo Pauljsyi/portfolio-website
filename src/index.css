@@ -20,7 +20,8 @@ html {
 .mesh {
   position: absolute;
 }
-#hero {
+#hero,
+#footer {
   background-color: #292d32;
   -webkit-mask-image: url("./assets/dot-mask.svg");
   mask-image: url("./assets/dot-mask.svg");

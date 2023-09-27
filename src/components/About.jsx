@@ -52,4 +52,4 @@ const About = () => {
   );
 };
 
-export default Wrapper(About, "about");
+export default About;

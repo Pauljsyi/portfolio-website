@@ -9,11 +9,13 @@ import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import TechCloud from "./TechCloud";
 import TechCloudMobile from "./TechCloudMobile";
+import Footer from "./Footer";
 
 export {
   Hero,
   Navbar,
   About,
+  Footer,
   Tech,
   TechCloud,
   TechCloudMobile,

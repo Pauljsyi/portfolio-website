@@ -83,4 +83,4 @@ const TechCloudMobile = () => {
   );
 };
 
-export default Wrapper(TechCloudMobile, "skills");
+export default TechCloudMobile;

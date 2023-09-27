@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const Experience = () => {
   return (
     <motion.div
-      className={` 2xl:mt-[5px] ml-[20px]  ${styles.sectionSubText}`}
+      className={` 2xl:mt-[5px] ml-[20px] pt-[25px] ${styles.sectionSubText}`}
       variants={textVariant()}
     >
       <p
@@ -22,4 +22,4 @@ const Experience = () => {
   );
 };
 
-export default Wrapper(Experience, "experience");
+export default Experience;

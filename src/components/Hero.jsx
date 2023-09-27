@@ -41,9 +41,9 @@ const Hero = () => {
             I build full stack applications.
           </p>
         </div>
-        {/* <div className="absolute left-0 top-0 w-full h-screen">
+        <div className="absolute left-0 top-0 w-full h-screen">
           <RobotCanvas />
-        </div> */}
+        </div>
       </div>
     </section>
   );

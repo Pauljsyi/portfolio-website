@@ -89,4 +89,4 @@ const TechCloud = () => {
   );
 };
 
-export default Wrapper(TechCloud, "skills");
+export default TechCloud;

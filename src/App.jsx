@@ -13,6 +13,7 @@ import {
   RobotCanvas,
   Works,
   StarsCanvas,
+  Footer,
 } from "./components";
 import("default-passive-events");
 
@@ -34,7 +35,7 @@ function App() {
           </div>
         </div>
         <div id="about-me-container" className="">
-          <div>
+          <div className=" pt-[50px] " id="about">
             <About />
           </div>
           <div
@@ -42,16 +43,22 @@ function App() {
             id="experience"
           >
             <Experience />
-            {isFS ? (
-              <TechCloudMobile mobile={300} />
-            ) : (
-              <TechCloud fullscreen={500} />
-            )}
+            <div
+              className=" flex justify-center align-center pt-[150px]"
+              id="skills"
+            >
+              {isFS ? (
+                <TechCloudMobile mobile={300} />
+              ) : (
+                <TechCloud fullscreen={500} />
+              )}
+            </div>
           </div>
           <Works />
         </div>
         <div>
           <Contact />
+          <Footer />
         </div>
       </div>
     </BrowserRouter>
