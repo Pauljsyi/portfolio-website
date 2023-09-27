@@ -20,8 +20,7 @@ html {
 .mesh {
   position: absolute;
 }
-#hero,
-#footer {
+#hero {
   background-color: #292d32;
   -webkit-mask-image: url("./assets/dot-mask.svg");
   mask-image: url("./assets/dot-mask.svg");
@@ -31,7 +30,32 @@ html {
   position: absolute;
 }
 
+#footer,
+#contact {
+  /* background: url("./assets/circuit-board.svg"); */
+  background-color: #4a545f;
+  -webkit-mask-image: url("./assets/circuit-board.svg");
+  mask-image: url("./assets/circuit-board.svg");
+  opacity: 0.2;
+  background-size: 5px 5px;
+  background-position: 0, 0, 20px, 20px;
+  background-repeat: repeat;
+  position: absolute;
+}
+
 #spotlight {
+  position: fixed;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+  /* z-index: 0; */
+}
+
+#spotlight-contact {
   position: fixed;
   opacity: 1;
   width: 100vw;

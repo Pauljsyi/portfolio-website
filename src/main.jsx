@@ -7,8 +7,8 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Suspense fallback={<CanvasLoader />}>
-      <App />
-    </Suspense>
+    {/* <Suspense fallback={<CanvasLoader />}> */}
+    <App />
+    {/* </Suspense> */}
   </React.StrictMode>
 );

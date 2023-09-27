@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { RobotCanvas } from "./canvas";
 import Wrapper from "./hoc/Wrapper";
+import Contact from "./Contact";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState(undefined);
@@ -31,11 +32,11 @@ const Hero = () => {
       <div
         className={`${
           styles.paddingX && styles.paddingY
-        } absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 relative`}
+        } absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 `}
       >
         <div className="flex flex-col justify-center items-center mt-5"></div>
         <div>
-          <h1 className={` relative ${styles.heroHeadText} drop-shadow-lg`}>
+          <h1 className={`${styles.heroHeadText} drop-shadow-lg`}>
             Hi, I'm <span className="text-[#]">Paul</span>.
           </h1>
           <p className={`${styles.heroSubText} drop-shadow-lg`}>

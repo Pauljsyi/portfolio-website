@@ -66,7 +66,7 @@ const TechCloudMobile = () => {
   }, []);
   return (
     <motion.div
-      className="flex justify-center 2xl:mt-[5px] mt-[-50px] md:justify-end"
+      className="flex justify-center mt-[-200px] md:justify-end"
       variants={textVariant()}
     >
       <div className={`text-sphere ${styles.sectionSubText} text-center `}>

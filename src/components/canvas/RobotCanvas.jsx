@@ -33,14 +33,14 @@ const Robot = (props) => {
     <mesh className="mesh" ref={group} onClick={handleOnClick}>
       <hemisphereLight intensity={1} groundColor="white" />
       <pointLight intensity={1} />
-      {/* <spotLight
+      <spotLight
         position={[-20, 50, 10]}
-        angle={0.12}
+        angle={0.52}
         penumbra={1}
         intensity={1}
         castShadow
         shadow-mapSize={1024}
-      /> */}
+      />
       <primitive
         object={robot.scene}
         scale={isMobile ? 0.002 : 0.0015}

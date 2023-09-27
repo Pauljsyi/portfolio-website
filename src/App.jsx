@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
+import CanvasLoader from "./components/Loader";
 import helpers from "./utils/helpers";
 
 import {
@@ -12,7 +13,6 @@ import {
   TechCloudMobile,
   RobotCanvas,
   Works,
-  StarsCanvas,
   Footer,
 } from "./components";
 import("default-passive-events");
@@ -27,13 +27,17 @@ function App() {
   return (
     <BrowserRouter>
       <div className="relative max-h-screen bg-primary snap-y snap-mandatory">
-        <div className=" bg-center relative snap-start">
-          <Navbar />
-          <Hero />
-          <div className="absolute left-0 top-0 w-full h-screen">
-            <RobotCanvas />
+        <Suspense fallback={<CanvasLoader />}>
+          <div className=" bg-center relative snap-start">
+            <Navbar />
+            <Hero />
+
+            <div className="absolute left-0 top-0 w-full h-screen">
+              {/* <CanvasLoader /> */}
+              <RobotCanvas />
+            </div>
           </div>
-        </div>
+        </Suspense>
         <div id="about-me-container">
           <div className=" pt-[50px] snap-start" id="about">
             <About />
@@ -44,7 +48,7 @@ function App() {
           >
             <Experience />
             <div
-              className=" flex justify-center align-center pt-[150px] snap-start"
+              className=" flex justify-center align-center mt-[-150px] pt-[160px] snap-start"
               id="skills"
             >
               {isFS ? (
@@ -58,7 +62,7 @@ function App() {
         </div>
         <div>
           <Contact />
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </BrowserRouter>

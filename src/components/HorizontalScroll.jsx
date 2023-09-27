@@ -107,7 +107,7 @@ const HorizontalScroll = () => {
     <section
       id="horizontalscrollcarousel"
       ref={targetRef}
-      className="relative h-[400vh]"
+      className="relative h-[400vh] pt-[9px] "
     >
       <h1 className={`${styles.sectionHeadText} lowercase text-center`}>
         Here's some of my work.

@@ -7,11 +7,11 @@ const Wrapper = (Component, idName) =>
   function HOC() {
     return (
       <motion.section
-        // key={count}
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.5 }}
+        exit={{ opacity: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
         className={`mx-auto relative z-0`}
       >
         <span className="hash-span mb-[50px]" id={idName}>

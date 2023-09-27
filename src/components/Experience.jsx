@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const Experience = () => {
   return (
     <motion.div
-      className={` 2xl:mt-[50px] ml-[20px] pt-[105px]  ${styles.sectionSubText}`}
+      className={` 2xl:mt-[50px] ml-[20px] pt-[110px]  ${styles.sectionSubText}`}
       variants={textVariant()}
       id="experience"
     >

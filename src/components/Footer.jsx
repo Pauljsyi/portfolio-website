@@ -18,11 +18,8 @@ const Footer = () => {
     };
   }, [mousePosition]);
   return (
-    <div className="w-full h-[100px] mx-auto snap-center" id="footer">
-      <div className="w-full h-[100px] mx-auto">
-        <div id="spotlight"></div>
-      </div>
-      Footer
+    <div className="flex justify-center items-center h-[100px]">
+      <p className="z-50 text-[white]">Footer</p>
     </div>
   );
 };

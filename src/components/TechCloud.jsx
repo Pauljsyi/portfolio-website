@@ -70,7 +70,7 @@ const TechCloud = () => {
   // 1535px
   return (
     <motion.div
-      className={`flex justify-center 2xl:mt-[5px] md:mt-[-50px] md:justify-end ${
+      className={`flex justify-center 2xl:mt-[150px] md:mt-[-50px] md:justify-end ${
         isMobile ? "mt-[500px]" : ""
       }`}
       variants={textVariant()}
