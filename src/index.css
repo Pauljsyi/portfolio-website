@@ -253,5 +253,5 @@ html {
 }
 
 .tagcloud--item:hover {
-  color: rgba(255, 135, 135, 1);
+  color: #ff8787;
 }

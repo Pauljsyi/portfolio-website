@@ -93,7 +93,7 @@ const Contact = () => {
             />
           </label>
           <button
-            className="bg-white w-fit hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+            className="hover:bg-[#FF8787] bg-[white] w-fit text-black  font-semibold py-2 px-4 border border-gray-400 rounded shadow"
             type="submit"
           >
             {loading ? "Sending..." : "Send"}
