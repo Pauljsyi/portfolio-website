@@ -1,15 +1,13 @@
-import React from "react";
 import HorizontalScroll from "./HorizontalScroll";
 import { Wrapper } from "./hoc";
 
 const Works = () => {
   return (
-    <>
-      <div className="flex h-20 items-center justify-center" id="work"></div>
+    <div>
       <HorizontalScroll />
-      <div className="flex h-48 items-center justify-center"></div>
-    </>
+    </div>
   );
 };
 
-export default Works;
+export default Wrapper(Works, "work");
+// export default Works;

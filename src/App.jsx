@@ -33,15 +33,17 @@ function App() {
             <RobotCanvas />
           </div>
         </div>
-        <div id="about-me-container">
-          <About />
+        <div id="about-me-container" className="">
+          <div>
+            <About />
+          </div>
           <div
-            className={`2xl:grid-cols-2 grid grid-cols-1  lg:mt-80 `}
+            className={`2xl:grid-cols-2 grid grid-cols-1  mb-[50px]`}
             id="experience"
           >
             <Experience />
             {isFS ? (
-              <TechCloudMobile mobile={200} />
+              <TechCloudMobile mobile={300} />
             ) : (
               <TechCloud fullscreen={500} />
             )}

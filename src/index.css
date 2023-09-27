@@ -13,6 +13,10 @@
   color-scheme: dark;
 }
 
+html {
+  max-width: max-content;
+}
+
 .mesh {
   position: absolute;
 }

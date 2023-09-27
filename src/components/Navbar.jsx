@@ -14,6 +14,7 @@ const navLinks = [
     id: "experience",
     title: "Experience",
   },
+  { id: "skills", title: "Skills" },
   {
     id: "work",
     title: "Work",
@@ -56,8 +57,10 @@ const Navbar = () => {
   useOutsideAlerter(wrapperRef, toggle, setToggle);
 
   useEffect(() => {
-    mediaQueryFunc("change", 640, setIsFS);
+    mediaQueryFunc("change", 800, setIsFS);
   }, []);
+
+  const handleClick = () => {};
 
   return (
     <nav className={`${styles.paddingX} w-full flex  py-5 fixed bg-black z-50`}>
@@ -95,7 +98,7 @@ const Navbar = () => {
           ))}
         </ul>
         {/* MOBILE */}
-        <div className="sm:hidden  ">
+        <div className={`${isFS ? "" : "hidden"}`} ref={wrapperRef}>
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -110,7 +113,6 @@ const Navbar = () => {
             className={`${
               !toggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
-            ref={wrapperRef}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navLinks.map((link) => (

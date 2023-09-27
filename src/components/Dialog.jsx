@@ -16,9 +16,9 @@ const DialogModal = ({ currProject, open, setOpen, handleOpen }) => {
   const card = currProject;
   return (
     <Dialog
-      size="lg"
+      size="xs"
       open={open}
-      className="sm:w-[100%]  lg:w-[800px] m-auto border-2 "
+      className=" border-2 "
       id="dialog"
       onClick={() => console.log("you clicked dialog")}
     >

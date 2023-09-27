@@ -10,28 +10,30 @@ const About = () => {
   const { mediaQueryFunc } = helpers;
   const [isFS, setIsFS] = useState(false);
   useEffect(() => {
-    mediaQueryFunc("change", 880, setIsFS);
+    mediaQueryFunc("change", 1199, setIsFS);
   }, []);
 
   return (
     <motion.div
       className={`${
-        isFS ? "" : "grid grid-cols-3 gap-4"
-      }  snap-start mt-[100px]`}
+        isFS
+          ? "sm:grid grid-cols-1 place-items-end px-[10%] "
+          : "grid grid-cols-3 gap-4"
+      } mt-[100px]`}
     >
       <motion.div
-        className="mt-20 col-span-1 flex justify-end"
+        className="mt-20 col-span-1 flex lg:justify-left justify-end max-w-2xl"
         variants={textVariant()}
       >
         <p
           // className={`font-small lg:text-[26px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] text-center flex`}
-          className={`${styles.sectionHeadText} text-secondary mr-[15px]`}
+          className={`${styles.sectionHeadText} text-secondary `}
         >
           whoami.
         </p>
       </motion.div>
       <motion.p
-        className="mt-20 col-span-2  text-[16px] max-w-3xl leading-[30px] flex justify-end"
+        className="mt-20 col-span-2 text-[13px]  sm:text-[16px] max-w-2xl leading-[30px] md:text-right"
         variants={fadeIn("", "", 0.1, 1)}
       >
         Hi, my name is Paul Yi. I am a Full Stack Developer with experience in

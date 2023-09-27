@@ -36,7 +36,7 @@ const HorizontalScrollCarousel = () => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  console.log("current project in HSC!!!", { currProject });
+
   const handleOpen = () => setOpen((cur) => !cur);
 
   const x = useTransform(

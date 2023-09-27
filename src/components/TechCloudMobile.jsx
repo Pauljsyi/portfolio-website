@@ -6,7 +6,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 import TagCloud from "TagCloud";
 import { styles } from "../styles";
 
-const TechCloudMobile = ({ mobile }) => {
+const TechCloudMobile = () => {
   useEffect(() => {
     console.log("TECH CLOUD MOBILE IS RENDERED");
     const container = ".tagcloud";
@@ -48,7 +48,7 @@ const TechCloudMobile = ({ mobile }) => {
     //   keep: false,
     // };
     const tech = TagCloud(container, techs, {
-      radius: 190,
+      radius: 250,
       maxSpeed: "normal",
       keep: false,
     });
@@ -83,4 +83,4 @@ const TechCloudMobile = ({ mobile }) => {
   );
 };
 
-export default Wrapper(TechCloudMobile, "techcloud");
+export default Wrapper(TechCloudMobile, "skills");

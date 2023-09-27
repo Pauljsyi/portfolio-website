@@ -1,14 +1,10 @@
-import React from "react";
 import {
   Button,
   Dialog,
   DialogHeader,
   DialogBody,
   DialogFooter,
-  Avatar,
-  IconButton,
   Typography,
-  Card,
 } from "@material-tailwind/react";
 import { github } from "../assets/index";
 

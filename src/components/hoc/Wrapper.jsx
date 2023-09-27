@@ -11,9 +11,9 @@ const Wrapper = (Component, idName) =>
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.5 }}
-        className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+        className={`mx-auto relative z-0`}
       >
-        <span className="hash-span" id={idName}>
+        <span className="hash-span mb-[50px]" id={idName}>
           &nbsp;
         </span>
 
