@@ -2,17 +2,21 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import { BrowserRouter } from "react-router-dom";
 import CanvasLoader from "./components/Loader";
 import helpers from "./utils/helpers";
-// import { Container } from "./components/index";
+import { Container } from "./components/index";
 
 import("default-passive-events");
 
-async function delay(promise) {
-  return await new Promise((resolve) => {
-    setTimeout(resolve, 3000);
-  }).then(() => promise);
-}
+// async function delay(promise) {
+//   try {
+//     return await new Promise((resolve) => {
+//       setTimeout(resolve, 20000);
+//     }).then(() => promise);
+//   } catch (error) {
+//     console.error({ error });
+//   }
+// }
 
-const DelayedContainer = lazy(() => delay(import("./components/Container")));
+// const DelayedContainer = lazy(() => delay(import("./components/Container")));
 
 function App() {
   const { mediaQueryFunc } = helpers;
@@ -22,11 +26,9 @@ function App() {
     mediaQueryFunc("change", 945, setIsFS);
   }, [isFS]);
   return (
-    <Suspense fallback={<CanvasLoader />}>
-      <BrowserRouter>
-        <DelayedContainer />
-      </BrowserRouter>
-    </Suspense>
+    <BrowserRouter>
+      <Container />
+    </BrowserRouter>
   );
 }
 

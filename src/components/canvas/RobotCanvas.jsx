@@ -12,7 +12,7 @@ import helpers from "../../utils/helpers";
 const robot_scene = "./kuma_heavy_robot_r-9000s/scene.gltf";
 
 const Robot = (props) => {
-  const { clicked, setClicked, isMobile } = props;
+  const { isMobile } = props;
   const group = useRef();
 
   const robot = useGLTF(robot_scene);
@@ -24,13 +24,8 @@ const Robot = (props) => {
     actions[names[0]].reset().fadeIn(0.5).play();
   }, []);
 
-  const handleOnClick = () => {
-    actions[names[0]].reset().fadeIn(0.5).play();
-    setClicked(!clicked);
-  };
-
   return (
-    <mesh className="mesh" ref={group} onClick={handleOnClick}>
+    <mesh className="mesh" ref={group}>
       <hemisphereLight intensity={1} groundColor="white" />
       <pointLight intensity={1} />
       <spotLight
@@ -62,7 +57,7 @@ const RobotCanvas = () => {
 
   return (
     <Canvas
-      frameLoop="demand"
+      // frameLoop="demand"
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserverDrawingBuffer: true }}
@@ -76,7 +71,7 @@ const RobotCanvas = () => {
         />
       )}
 
-      <Robot isMobile={isMobile} clicked={clicked} setClicked={setClicked} />
+      <Robot isMobile={isMobile} />
       <Preload all />
     </Canvas>
   );

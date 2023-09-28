@@ -12,8 +12,6 @@ import {
 } from "../assets/index";
 
 const HorizontalScroll = () => {
-  const ref = useRef();
-  ref.current = document.getElementById("app-container");
   const { mediaQueryFunc } = helpers;
   const [open, setOpen] = useState(false);
   const [currProject, setCurrProject] = useState({});
@@ -26,20 +24,6 @@ const HorizontalScroll = () => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-
-  useEffect(() => {
-    if (open) {
-      return ref.current.setAttribute(
-        "class",
-        "relative max-h-screen bg-primary snap-y snap-mandatory filter blur-xl"
-      );
-    } else {
-      return ref.current.setAttribute(
-        "class",
-        "relative max-h-screen bg-primary snap-y snap-mandatory"
-      );
-    }
-  }, [open]);
 
   const handleOpen = () => {
     setOpen((cur) => !cur);
@@ -67,42 +51,36 @@ const HorizontalScroll = () => {
             transition={{ delay: 1 }}
             style={{ x }}
           >
-            {cards.map((card) => {
+            {cards.map((card, indx) => {
               return (
-                <>
-                  <Card
-                    className="group relative h-[700px] w-[360px] md:w-[50vw] overflow-hidden transition-opacity hover:opacity-90 bg-neutral-200"
-                    onClick={() => {
-                      handleOpen();
-                      setCurrProject(card);
-                      if (typeof window != "undefined" && window.document) {
-                        document.body.style.overflow = "hidden";
-                      }
-                    }}
-                  >
-                    <img
-                      alt="nature"
-                      className="h-full w-full object-cover object-center transition-transform duration-300 blur-sm grayscale-[40%] group-hover:scale-110  group-hover:filter-none"
-                      src={card.url}
-                    />
-                    <div className="absolute inset-0 z-10 grid place-content-center">
-                      <p className="bg-gradient-to-br from-black/20 to-black/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-sm">
-                        {card.title}
-                      </p>
-                    </div>
-                  </Card>
-                </>
+                <Card
+                  key={indx}
+                  className="group relative h-[700px] w-[360px] md:w-[50vw] overflow-hidden transition-opacity hover:opacity-90 bg-neutral-200"
+                  onClick={() => {
+                    handleOpen();
+                    setCurrProject(card);
+                    if (typeof window != "undefined" && window.document) {
+                      document.body.style.overflow = "hidden";
+                    }
+                  }}
+                >
+                  <img
+                    alt="nature"
+                    className="h-full w-full object-cover object-center transition-transform duration-300 blur-sm grayscale-[40%] group-hover:scale-110  group-hover:filter-none"
+                    src={card.url}
+                  />
+                  <div className="absolute inset-0 z-10 grid place-content-center">
+                    <p className="bg-gradient-to-br from-black/20 to-black/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-sm">
+                      {card.title}
+                    </p>
+                  </div>
+                </Card>
               );
             })}
           </motion.div>
         </div>
       </section>
-      <Modal
-        open={open}
-        setOpen={setOpen}
-        currProject={currProject}
-        blur={blur}
-      />
+      <Modal open={open} setOpen={setOpen} currProject={currProject} />
     </>
   );
 };

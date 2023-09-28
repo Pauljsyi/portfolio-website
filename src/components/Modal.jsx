@@ -63,23 +63,15 @@ const techIcons = {
 };
 
 const Modal = (props) => {
-  const { currProject, open, setOpen } = props;
+  const { open, setOpen, currProject } = props;
   if (!open) {
     return null;
   }
 
-  //   useEffect(() => {
-  //     if (open) {
-  //       return ref.current.setAttribute(
-  //         "class",
-  //         "relative h-[200vh] pt-[9px] filter blur-xl"
-  //       );
-  //     }
-  //   }, [open]);
   return ReactDom.createPortal(
     <>
       <div
-        className=""
+        className="backdrop-blur-lg"
         id="overlay"
         onClick={() => {
           setOpen(!open);

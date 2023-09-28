@@ -66,8 +66,9 @@ const VerticalTabs = () => {
           isFS ? "flex-row w-[100%]" : ""
         }`}
       >
-        {data.map(({ label, value }) => (
+        {data.map(({ label, value }, indx) => (
           <Tab
+            key={indx}
             className={`z-10 flex justify-end mb-5 uppercase justify-center  ${
               activeTab === value ? "text-[#FF8787]" : ""
             } `}
@@ -90,7 +91,10 @@ const VerticalTabs = () => {
             </div>
             <ul>
               {desc.map((item, indx) => (
-                <div className="flex sm:text-[16px] text-[11px] text-secondary lowercase tracking-wider">
+                <div
+                  key={indx}
+                  className="flex sm:text-[16px] text-[11px] text-secondary lowercase tracking-wider"
+                >
                   <span className="ml-12 mr-6">&#8226;</span>
                   <li>{item}</li>
                 </div>
