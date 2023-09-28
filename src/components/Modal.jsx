@@ -1,51 +1,174 @@
-import React from 'react'
+import React from "react";
+import ReactDom from "react-dom";
+import {
+  githublight,
+  githubdark,
+  css,
+  figma,
+  git,
+  html,
+  javascript,
+  mongodb,
+  node,
+  react,
+  redux,
+  tailwind,
+  typescript,
+  three,
+  shopify,
+  express,
+  stripe,
+  firebase,
+  bootstrap,
+  coffeeAPI,
+  chakraui,
+  dotnetcore,
+  entityframework,
+  mysql,
+  razor,
+  postgresql,
+  mongoose,
+  csharp,
+} from "../assets/index";
 
-export const modal = () => {
-  return (
-    <div id="extralarge-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-    <div class="relative w-full max-w-7xl max-h-full">
-        <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-            <!-- Modal header -->
-            <div class="flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600">
-                <h3 class="text-xl font-medium text-gray-900 dark:text-white">
-                    Extra Large modal
-                </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="extralarge-modal">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
-            </div>
-            <!-- Modal body -->
-            <div class="p-6 space-y-6">
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                </p>
-            </div>
-            <!-- Modal footer -->
-            <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                <button data-modal-hide="extralarge-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
-                <button data-modal-hide="extralarge-modal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
-            </div>
+const techIcons = {
+  githubdark: githubdark,
+  githublight: githublight,
+  css: css,
+  figma: figma,
+  git: git,
+  html: html,
+  javascript: javascript,
+  mongodb: mongodb,
+  nodejs: node,
+  react: react,
+  redux: redux,
+  tailwind: tailwind,
+  typescript: typescript,
+  threejs: three,
+  shopify: shopify,
+  express: express,
+  stripe: stripe,
+  firebase: firebase,
+  bootstrap: bootstrap,
+  coffeeAPI: coffeeAPI,
+  chakraui: chakraui,
+  dotnetcore: dotnetcore,
+  entityframework: entityframework,
+  mysql: mysql,
+  razor: razor,
+  postgresql: postgresql,
+  mongoose: mongoose,
+  csharp: csharp,
+};
+
+const Modal = (props) => {
+  const { currProject, open, setOpen } = props;
+  if (!open) return null;
+  return ReactDom.createPortal(
+    <>
+      <div
+        id="overlay"
+        onClick={() => {
+          setOpen(!open);
+          document.body.style.overflow = "unset";
+        }}
+      />
+      <div
+        className="text-black flex flex-col max-w-[900px] "
+        id="modal-container"
+      >
+        {/* HEADER */}
+        <div className="flex justify-between p-[15px]" id="modal-header">
+          <div id="modal-header-left">
+            <p className="text-[14px] font-bold">{currProject.title}</p>
+            <p className="text-[11px]">@pauljsyi</p>
+          </div>
+          <div>
+            <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+              <a
+                className="flex items-center text-[14px]"
+                href={currProject.gh}
+              >
+                <img
+                  className=" w-[25px] mr-[10px]"
+                  src={githubdark}
+                  alt="github"
+                />
+                github
+              </a>
+            </button>
+          </div>
+          <div
+            className="flex flex-row items-center justify-between w-[120px]"
+            id="modal-header-right"
+          >
+            {currProject.site === "" ? (
+              "under construction"
+            ) : (
+              <a
+                className="text-[14px]"
+                href={currProject.site}
+                rel="noreferrer"
+                target="_blank"
+              >
+                link to site
+              </a>
+            )}
+            <button
+              size="xl"
+              onClick={() => {
+                setOpen(!open);
+                document.body.style.overflow = "unset";
+              }}
+            >
+              <h1 className="text-[30px]">X</h1>
+            </button>
+          </div>
         </div>
-    </div>
-</div>
-  )
-}
+        {/* BODY */}
+        <div className="relative" id="modal-body">
+          <img
+            alt={currProject.title}
+            className="h-[400px] w-full min-w-[400px] "
+            src={currProject.url}
+          />
+          <div
+            className={`absolute top-0 left-0 backdrop-blur-lg backdrop-brightness-[.60]  grayscale-[30%] w-[100%] h-[400px]`}
+          >
+            <p
+              className={`lg:text-lg md:text-sm text-xs font-small lg:mx-[50px] mx-[10px] mt-[50px] text-[white]`}
+            >
+              {currProject.desc}
+            </p>
+          </div>
+          <div className="flex flex-col items-center justify-between h-[50%]">
+            <div>
+              <p className="font-normal">The Stack:</p>
+            </div>
+            <div className="relative">
+              <div id="stack-item" className="font-normal flex  flex-wrap">
+                {open
+                  ? currProject.stack.map((stack, indx) => (
+                      <div className="m-[15px]" key={indx}>
+                        <img
+                          className="w-[45px]"
+                          key={indx}
+                          src={techIcons[stack]}
+                          title={stack}
+                          alt={stack}
+                        />
+                      </div>
+                    ))
+                  : null}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>,
+    document.getElementById("portal")
+  );
+};
+
+export default Modal;

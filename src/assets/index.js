@@ -1,6 +1,6 @@
 import logo1 from "./logo-py-white.png";
 import logo2 from "./logo-js-white.png";
-import github from "./github.png";
+import githublight from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
@@ -30,6 +30,7 @@ import razor from "./tech/razor.png";
 import postgresql from "./tech/postgresql.svg";
 import mongoose from "./tech/mongoose.png";
 import csharp from "./tech/csharp.svg";
+import githubdark from "./icons/github-mark.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -43,13 +44,14 @@ import klickklack from "./projects/klickklack.png";
 import weddingplanner from "./projects/weddingplanner.png";
 
 export {
+  githubdark,
   coffeazy,
   paradigmguitar,
   klickklack,
   weddingplanner,
   logo1,
   logo2,
-  github,
+  githublight,
   menu,
   close,
   css,

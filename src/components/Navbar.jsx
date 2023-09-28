@@ -63,7 +63,9 @@ const Navbar = () => {
   const handleClick = () => {};
 
   return (
-    <nav className={`${styles.paddingX} w-full flex  py-5 fixed bg-black z-50`}>
+    <nav
+      className={`${styles.paddingX} w-full flex  py-5 fixed bg-black z-[1]`}
+    >
       <div className="w-full flex justify-around items-center max-w-7xl mx-auto">
         <Link
           to="/"

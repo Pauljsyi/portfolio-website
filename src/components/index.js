@@ -11,10 +11,12 @@ import Contact from "./Contact";
 import TechCloud from "./TechCloud";
 import TechCloudMobile from "./TechCloudMobile";
 import Container from "./Container";
+import Modal from "./Modal";
 
 import Footer from "./Footer";
 
 export {
+  Modal,
   Hero,
   Navbar,
   HeroContainer,
