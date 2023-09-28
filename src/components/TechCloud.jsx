@@ -11,9 +11,6 @@ const TechCloud = () => {
   useEffect(() => {
     const { mediaQueryFunc } = helpers;
     mediaQueryFunc("change", 1535, setIsMobile);
-    console.log("line 14", { isMobile });
-
-    console.log("TECH CLOUD FULL SCREEN IS RENDERED");
     const container = ".tagcloud";
     const techs = [
       "HTML",
@@ -64,7 +61,6 @@ const TechCloud = () => {
         tech[i].destroy();
       }
     }
-    // console.log("tagcloud", TagCloud(container, techs, options).destroy);
   }, [isMobile]);
 
   // 1535px

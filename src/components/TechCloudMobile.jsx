@@ -8,7 +8,6 @@ import { styles } from "../styles";
 
 const TechCloudMobile = () => {
   useEffect(() => {
-    console.log("TECH CLOUD MOBILE IS RENDERED");
     const container = ".tagcloud";
     const techs = [
       "HTML",
@@ -52,9 +51,7 @@ const TechCloudMobile = () => {
       maxSpeed: "normal",
       keep: false,
     });
-    console.log({ tech });
-    console.log("isarray?", Array.isArray(tech));
-    console.log("length", tech.length);
+
     if (tech.length) {
       let numToDestroy = tech.length;
 
@@ -62,7 +59,6 @@ const TechCloudMobile = () => {
         tech[i].destroy();
       }
     }
-    // console.log("tagcloud", TagCloud(container, techs, options).destroy);
   }, []);
   return (
     <motion.div

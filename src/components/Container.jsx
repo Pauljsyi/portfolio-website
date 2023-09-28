@@ -21,7 +21,10 @@ const Container = () => {
     mediaQueryFunc("change", 945, setIsFS);
   }, [isFS]);
   return (
-    <div className="relative max-h-screen bg-primary snap-y snap-mandatory">
+    <div
+      className="relative max-h-screen bg-primary snap-y snap-mandatory"
+      id="app-container"
+    >
       <div className=" bg-center relative snap-start">
         {/* <DelayedHeroContainer /> */}
         <HeroContainer />

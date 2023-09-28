@@ -12,18 +12,34 @@ import {
 } from "../assets/index";
 
 const HorizontalScroll = () => {
+  const ref = useRef();
+  ref.current = document.getElementById("app-container");
   const { mediaQueryFunc } = helpers;
   const [open, setOpen] = useState(false);
-  const [overflow, setOverflow] = useState(false);
   const [currProject, setCurrProject] = useState({});
   const targetRef = useRef(null);
   const [isFS, setIsFS] = useState(false);
+
   useEffect(() => {
     mediaQueryFunc("change", 640, setIsFS);
   }, []);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
+
+  useEffect(() => {
+    if (open) {
+      return ref.current.setAttribute(
+        "class",
+        "relative max-h-screen bg-primary snap-y snap-mandatory filter blur-xl"
+      );
+    } else {
+      return ref.current.setAttribute(
+        "class",
+        "relative max-h-screen bg-primary snap-y snap-mandatory"
+      );
+    }
+  }, [open]);
 
   const handleOpen = () => {
     setOpen((cur) => !cur);
@@ -39,7 +55,7 @@ const HorizontalScroll = () => {
       <section
         id="horizontalscrollcarousel"
         ref={targetRef}
-        className="relative h-[200vh] pt-[9px] "
+        className={`relative h-[200vh] pt-[9px] ${blur}`}
       >
         <h1 className={`${styles.sectionHeadText} lowercase text-center`}>
           Here's some of my work.
@@ -81,7 +97,12 @@ const HorizontalScroll = () => {
           </motion.div>
         </div>
       </section>
-      <Modal open={open} setOpen={setOpen} currProject={currProject} />
+      <Modal
+        open={open}
+        setOpen={setOpen}
+        currProject={currProject}
+        blur={blur}
+      />
     </>
   );
 };
