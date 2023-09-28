@@ -67,12 +67,15 @@ const RobotCanvas = () => {
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserverDrawingBuffer: true }}
     >
-      <OrbitControls
-        enableRotate={isMobile ? false : true}
-        enableZoom={false}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2.5}
-      />
+      {isMobile ? null : (
+        <OrbitControls
+          enableRotate={isMobile ? false : true}
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2.5}
+        />
+      )}
+
       <Robot isMobile={isMobile} clicked={clicked} setClicked={setClicked} />
       <Preload all />
     </Canvas>
