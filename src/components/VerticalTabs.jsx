@@ -79,9 +79,7 @@ const VerticalTabs = () => {
           </Tab>
         ))}
       </TabsHeader>
-      <TabsBody
-        className={`lg:w-[900px] max-w-screen-md  mt-[-10px] ml-[-25px]`}
-      >
+      <TabsBody className={`lg:w-[900px] max-w-screen-md pt-[5px] ml-[-25px]`}>
         {data.map(({ value, position, dates, desc }, indx) => (
           <TabPanel key={value} value={value}>
             <div className="ml-12 mt-[-10px]">
@@ -92,7 +90,7 @@ const VerticalTabs = () => {
             </div>
             <ul>
               {desc.map((item, indx) => (
-                <div className="flex sm:text-[16px] text-[14px] text-secondary lowercase tracking-wider">
+                <div className="flex sm:text-[16px] text-[11px] text-secondary lowercase tracking-wider">
                   <span className="ml-12 mr-6">&#8226;</span>
                   <li>{item}</li>
                 </div>
