@@ -10,7 +10,7 @@ const TechCloud = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const { mediaQueryFunc } = helpers;
-    mediaQueryFunc("change", 1535, setIsMobile);
+    mediaQueryFunc("change", 1740, setIsMobile);
     const container = ".tagcloud";
     const techs = [
       "HTML",
@@ -66,7 +66,7 @@ const TechCloud = () => {
   // 1535px
   return (
     <motion.div
-      className={`flex justify-center  md:mt-[50px] md:justify-end pt-[110px] ${
+      className={`flex justify-center  md:mt-[50px] md:justify-end min-[1740px]:pt-[110px] ${
         isMobile ? "mt-[500px]" : ""
       }`}
       variants={textVariant()}

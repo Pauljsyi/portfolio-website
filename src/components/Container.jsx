@@ -39,7 +39,7 @@ const Container = () => {
           <About />
         </div>
         <div
-          className={`2xl:grid-cols-2 grid grid-cols-1  mb-[50px] snap-start`}
+          className={`min-[1740px]:grid-cols-2 xl:grid grid-cols-1  mb-[50px] snap-start`}
           id="experience"
         >
           <Experience />

@@ -32,7 +32,8 @@ html {
 }
 
 #footer,
-#contact-screen {
+#contact-screen,
+#hero {
   /* background: url("./assets/circuit-board.svg"); */
   background-color: #292d32;
   -webkit-mask-image: url("./assets/circuit-board.svg");
