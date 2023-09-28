@@ -100,7 +100,7 @@ const HorizontalScroll = () => {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    isFS ? ["5%", "-70%"] : ["5%", "-63.5%"]
+    isFS ? ["2%", "-75%"] : ["5%", "-63.5%"]
   );
 
   return (
@@ -123,7 +123,7 @@ const HorizontalScroll = () => {
             return (
               <>
                 <Card
-                  className="group relative h-[700px] w-[160px] md:w-[50vw] overflow-hidden transition-opacity hover:opacity-90 bg-neutral-200"
+                  className="group relative h-[700px] w-[360px] md:w-[50vw] overflow-hidden transition-opacity hover:opacity-90 bg-neutral-200"
                   onClick={() => {
                     handleOpen();
                     setCurrProject(card);
