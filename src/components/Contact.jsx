@@ -63,17 +63,17 @@ const Contact = () => {
   }, [mousePosition]);
   return (
     <>
-      <div className="w-full h-screen">
-        <div className="w-full h-screen mx-auto" id="contact">
+      <div className="w-full h-screen mt-[-24px] bg-[#292d32] flex justify-center">
+        <div className="w-full h-[1000px] mx-auto" id="contact-screen">
           <div id="spotlight-contact"></div>
         </div>
 
-        <div className="static xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-w-screen max-h-screen justify-center pt-[50px] snap-start">
+        <div className="static xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-h-screen justify-center pt-[150px] mx-[300px] max-w-screen ">
           <motion.div
             variants={slideIn("right", "tween", 0.5, 1.5)}
-            className="flex-[0.75] p-8 bg-[#080E15]"
+            className="w-[600px] flex-[0.75] p-8 justify-center"
           >
-            <div className="">
+            <div>
               <h3 className={styles.sectionHeadText}>contact.</h3>
               <form
                 ref={formRef}

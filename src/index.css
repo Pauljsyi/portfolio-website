@@ -31,9 +31,9 @@ html {
 }
 
 #footer,
-#contact {
+#contact-screen {
   /* background: url("./assets/circuit-board.svg"); */
-  background-color: #4a545f;
+  background-color: #292d32;
   -webkit-mask-image: url("./assets/circuit-board.svg");
   mask-image: url("./assets/circuit-board.svg");
   opacity: 0.2;
@@ -69,9 +69,9 @@ html {
 
 #about-me-container,
 #horizontalscrollcarousel {
-  background-color: #292d32;
-  -webkit-mask-image: url("./assets/noise-mask.jpg");
-  mask-image: url("./assets/noise-mask.jpg");
+  /* background-color: #292d32; */
+  /* -webkit-mask-image: url("./assets/noise-mask.jpg");
+  mask-image: url("./assets/noise-mask.jpg"); */
 }
 
 .hash-span {

@@ -107,7 +107,7 @@ const HorizontalScroll = () => {
     <section
       id="horizontalscrollcarousel"
       ref={targetRef}
-      className="relative h-[400vh] pt-[9px] "
+      className="relative h-[200vh] pt-[9px] "
     >
       <h1 className={`${styles.sectionHeadText} lowercase text-center`}>
         Here's some of my work.
@@ -123,7 +123,7 @@ const HorizontalScroll = () => {
             return (
               <>
                 <Card
-                  className="group relative h-[600px] w-[360px] md:w-[50vw] overflow-hidden transition-opacity hover:opacity-90 bg-neutral-200  "
+                  className="group relative h-[700px] w-[160px] md:w-[50vw] overflow-hidden transition-opacity hover:opacity-90 bg-neutral-200"
                   onClick={() => {
                     handleOpen();
                     setCurrProject(card);
