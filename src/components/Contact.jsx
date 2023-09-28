@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Wrapper } from "./hoc";
+import { Footer } from "./index";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -64,14 +65,14 @@ const Contact = () => {
   return (
     <>
       <div className="w-full h-screen mt-[-24px] bg-[#292d32] flex justify-center">
-        <div className="w-full h-[1000px] mx-auto" id="contact-screen">
+        <div className="w-full h-[1050px] mx-auto" id="contact-screen">
           <div id="spotlight-contact"></div>
         </div>
 
-        <div className="static xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-h-screen justify-center pt-[150px] mx-[300px] max-w-screen ">
+        <div className="static xl:flex-row flex-col-reverse flex gap-10 overflow-hidden max-h-screen justify-center pt-[150px]  max-w-screen mr-[50px] ">
           <motion.div
             variants={slideIn("right", "tween", 0.5, 1.5)}
-            className="w-[600px] flex-[0.75] p-8 justify-center"
+            className="w-[600px] flex-[0.75] p-8 justify-center bg-[#292d32]"
           >
             <div>
               <h3 className={styles.sectionHeadText}>contact.</h3>
@@ -81,18 +82,20 @@ const Contact = () => {
                 className="mt-12 flex flex-col gap-8 "
               >
                 <label className="flex flex-col flex items-start border-b border-teal-500 py-2">
-                  <span className="text-white font-medium mb-4">Your Name</span>
+                  <span className="text-[white] font-medium mb-4">
+                    Your Name
+                  </span>
                   <input
                     type="text"
                     name="name"
                     value={form.name}
                     onChange={handleChange}
                     placeholder="What's your name?"
-                    className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none "
+                    className="appearance-none bg-transparent border-none w-full text-[white] mr-3 py-1 px-2 leading-tight focus:outline-none "
                   />
                 </label>
                 <label className="flex flex-col flex items-start border-b border-teal-500 py-2">
-                  <span className="text-white font-medium mb-4">
+                  <span className="text-[white] font-medium mb-4">
                     Your Email
                   </span>
                   <input
@@ -101,11 +104,11 @@ const Contact = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="What's your email?"
-                    className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none "
+                    className="appearance-none bg-transparent border-none w-full text-[white] mr-3 py-1 px-2 leading-tight focus:outline-none "
                   />
                 </label>
                 <label className="flex flex-col flex items-start border-b border-teal-500 py-2">
-                  <span className="text-white font-medium mb-4">
+                  <span className="text-[white] font-medium mb-4">
                     Your Message
                   </span>
                   <textarea
@@ -115,7 +118,7 @@ const Contact = () => {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="What would you like to say?"
-                    className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none "
+                    className="appearance-none bg-transparent border-none w-full text-[white] mr-3 py-1 px-2 leading-tight focus:outline-none "
                   />
                 </label>
                 <button
@@ -129,6 +132,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

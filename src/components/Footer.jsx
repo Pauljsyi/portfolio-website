@@ -1,25 +1,17 @@
 import React, { useEffect, useState } from "react";
 
 const Footer = () => {
-  const [mousePosition, setMousePosition] = useState(undefined);
-  useEffect(() => {
-    function handleMouseMove(event) {
-      const spotlightEl = document.querySelector("#spotlight");
-      const { clientX, clientY } = event;
-      setMousePosition(event);
-      spotlightEl.style.background = `radial-gradient(circle at ${clientX}px ${clientY}px, rgba(255, 135, 135, 1)
-   5px, transparent 25%)`;
-    }
-
-    document.addEventListener("mousemove", handleMouseMove, { passive: true });
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [mousePosition]);
   return (
-    <div className="flex justify-center items-center h-[100px]">
-      <p className="z-50 text-[white]">Footer</p>
+    <div className="flex sm:flex-row flex-col justify-center  items-center  h-[100px]">
+      <div className="flex flex-col items-center">
+        <p className="z-50 text-[white] text-[14px] text-center">
+          © 2023 pauljsyi.
+        </p>
+        <p className="z-50 text-[white] text-[12px] text-start">
+          Created with React, Three.js, Framer-Motion, and Tailwind CSS.
+          Deployed with Vercel.
+        </p>
+      </div>
     </div>
   );
 };
