@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="z-50 text-[white] text-[14px] text-center">
           © 2023 pauljsyi.
         </p>
-        <p className="z-50 text-[white] text-[12px] text-start">
+        <p className="z-50 text-[white] text-[12px] text-center px-[50px]">
           Created with React, Three.js, Framer-Motion, and Tailwind CSS.
           Deployed with Vercel.
         </p>
