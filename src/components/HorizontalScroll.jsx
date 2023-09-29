@@ -4,6 +4,7 @@ import helpers from "../utils/helpers";
 import { styles } from "../styles";
 import { Modal } from "./index";
 import { Card } from "@material-tailwind/react";
+import { Wrapper } from "./hoc";
 import {
   coffeazy,
   paradigmguitar,
@@ -19,7 +20,7 @@ const HorizontalScroll = () => {
   const [isFS, setIsFS] = useState(false);
 
   useEffect(() => {
-    mediaQueryFunc("change", 640, setIsFS);
+    mediaQueryFunc("change", 800, setIsFS);
   }, []);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -31,7 +32,7 @@ const HorizontalScroll = () => {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    isFS ? ["2%", "-75%"] : ["5%", "-63.5%"]
+    isFS ? ["2%", "-100%"] : ["5%", "-70%"]
   );
 
   return (
@@ -39,45 +40,45 @@ const HorizontalScroll = () => {
       <section
         id="horizontalscrollcarousel"
         ref={targetRef}
-        className={`relative h-[200vh] pt-[9px] ${blur}`}
+        className={`relative flex flex-col  pt-[9px] ${blur}`}
       >
-        <h1 className={`${styles.sectionHeadText} lowercase text-center`}>
+        <h1 className={`${styles.sectionHeadText}  lowercase text-center`}>
           Here's some of my work.
         </h1>
-        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-          <motion.div
-            className="flex gap-4"
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            style={{ x }}
-          >
-            {cards.map((card, indx) => {
-              return (
-                <Card
-                  key={indx}
-                  className="group relative h-[700px] w-[360px] md:w-[50vw] overflow-hidden transition-opacity hover:opacity-90 bg-neutral-200"
-                  onClick={() => {
-                    handleOpen();
-                    setCurrProject(card);
-                    if (typeof window != "undefined" && window.document) {
-                      document.body.style.overflow = "hidden";
-                    }
-                  }}
-                >
-                  <img
-                    alt="nature"
-                    className="h-full w-full object-cover object-center transition-transform duration-300 blur-sm grayscale-[40%] group-hover:scale-110  group-hover:filter-none"
-                    src={card.url}
-                  />
-                  <div className="absolute inset-0 z-10 grid place-content-center">
-                    <p className="bg-gradient-to-br from-black/20 to-black/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-sm">
-                      {card.title}
-                    </p>
-                  </div>
-                </Card>
-              );
-            })}
-          </motion.div>
+        <div className=" flex flex-wrap p-[50px] justify-center items-center  overflow-hidden">
+          {/* <motion.div
+          className="flex gap-4"
+          whileInView={{ opacity: 0.5 }}
+          transition={{ delay: 8 }}
+          style={{ x }}
+        > */}
+          {cards.map((card, indx) => {
+            return (
+              <Card
+                key={indx}
+                className="group m-[25px] relative h-[400px] w-[360px]  overflow-hidden transition-opacity hover:opacity-90 bg-neutral-200"
+                onClick={() => {
+                  handleOpen();
+                  setCurrProject(card);
+                  if (typeof window != "undefined" && window.document) {
+                    document.body.style.overflow = "hidden";
+                  }
+                }}
+              >
+                <img
+                  alt="nature"
+                  className="h-full w-full object-cover object-center transition-transform duration-300 blur-sm grayscale-[40%] group-hover:scale-110  group-hover:filter-none"
+                  src={card.url}
+                />
+                <div className="absolute inset-0 z-10 grid place-content-center">
+                  <p className="bg-gradient-to-br from-black/20 to-black/0 p-8 text-3xl font-black uppercase text-white backdrop-blur-sm">
+                    {card.title}
+                  </p>
+                </div>
+              </Card>
+            );
+          })}
+          {/* </motion.div> */}
         </div>
       </section>
       <Modal open={open} setOpen={setOpen} currProject={currProject} />
@@ -85,7 +86,7 @@ const HorizontalScroll = () => {
   );
 };
 
-export default HorizontalScroll;
+export default Wrapper(HorizontalScroll, "work");
 
 const cards = [
   {

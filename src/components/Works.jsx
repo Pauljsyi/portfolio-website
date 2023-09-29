@@ -3,7 +3,7 @@ import { Wrapper } from "./hoc";
 
 const Works = () => {
   return (
-    <div className="snap-start ">
+    <div className="relative ">
       <HorizontalScroll />
     </div>
   );

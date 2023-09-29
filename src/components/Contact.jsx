@@ -64,8 +64,8 @@ const Contact = () => {
   }, [mousePosition]);
   return (
     <>
-      <div className="w-full h-screen mt-[-24px] bg-[#292d32] flex justify-center">
-        <div className="w-full h-[1050px] mx-auto" id="contact-screen">
+      <div className="w-full h-screen max-h-[1200px] mt-[-24px] bg-[#292d32] flex justify-center">
+        <div className="w-full h-[100%] mx-auto" id="contact-screen">
           <div id="spotlight-contact"></div>
         </div>
 

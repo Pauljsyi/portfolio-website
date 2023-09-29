@@ -21,11 +21,8 @@ const Container = () => {
     mediaQueryFunc("change", 945, setIsFS);
   }, [isFS]);
   return (
-    <div
-      className="relative max-h-screen bg-primary snap-y snap-mandatory"
-      id="app-container"
-    >
-      <div className=" bg-center relative snap-start">
+    <div className="relative max-h-screen bg-primary" id="app-container">
+      <div className=" bg-center relative ">
         {/* <DelayedHeroContainer /> */}
         <HeroContainer />
 
@@ -35,16 +32,16 @@ const Container = () => {
       </div>
 
       <div id="about-me-container">
-        <div className=" pt-[50px] snap-start" id="about">
+        <div className=" pt-[50px] " id="about">
           <About />
         </div>
         <div
-          className={`min-[1740px]:grid-cols-2 xl:grid grid-cols-1  mb-[50px] snap-start`}
+          className={`min-[1740px]:grid-cols-2 xl:grid grid-cols-1  mb-[50px] `}
           id="experience"
         >
           <Experience />
           <div
-            className=" flex justify-center align-center mt-[-150px] pt-[160px] snap-start"
+            className=" flex justify-center align-center mt-[-150px] pt-[160px] "
             id="skills"
           >
             {isFS ? (

@@ -79,7 +79,7 @@ const Modal = (props) => {
         }}
       />
       <div
-        className="text-black flex flex-col max-w-[900px] "
+        className="text-black flex flex-col max-w-[900px] rounded-md"
         id="modal-container"
       >
         {/* HEADER */}

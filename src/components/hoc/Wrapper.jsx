@@ -12,9 +12,9 @@ const Wrapper = (Component, idName) =>
         whileInView="show"
         exit={{ opacity: 0 }}
         viewport={{ once: true, amount: 0.5 }}
-        className={`mx-auto relative z-0 mt-[25px]`}
+        className={`mx-auto relative z-0`}
       >
-        <span className="hash-span  snap-start" id={idName}></span>
+        <span className="hash-span" id={idName}></span>
 
         <Component />
       </motion.section>
