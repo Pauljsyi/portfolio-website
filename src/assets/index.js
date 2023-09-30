@@ -37,6 +37,10 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
+import github from "./cta/github.png";
+import linkedin from "./cta/linkedin-rounded.png";
+import resume from "./cta/resume.png";
+
 // project assets
 import coffeazy from "./projects/coffeazy.png";
 import paradigmguitar from "./projects/paradigmguitar.png";
@@ -44,6 +48,9 @@ import klickklack from "./projects/klickklack.png";
 import weddingplanner from "./projects/weddingplanner.png";
 
 export {
+  github,
+  linkedin,
+  resume,
   githubdark,
   coffeazy,
   paradigmguitar,

@@ -4,6 +4,7 @@ import { styles } from "../styles";
 import { RobotCanvas } from "./canvas";
 import Wrapper from "./hoc/Wrapper";
 import Contact from "./Contact";
+import { github, linkedin, resume } from "../assets/index";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState(undefined);
@@ -41,6 +42,19 @@ const Hero = () => {
           <p className={`${styles.heroSubText} drop-shadow-lg`}>
             I build full stack applications.
           </p>
+          <div className="call-to-action w-[250px]">
+            <div className="flex justify-evenly">
+              <a className="flex" href="https://linkedin.com/in/pauljsyi">
+                <img src={linkedin} alt="linkedin" />
+              </a>
+              <a href="https://github.com/pauljsyi">
+                <img src={github} alt="github" />
+              </a>
+              <a href="#resume">
+                <img src={resume} alt="resume" />
+              </a>
+            </div>
+          </div>
         </div>
         <div className="absolute left-0 top-0 w-full h-screen">
           <RobotCanvas />

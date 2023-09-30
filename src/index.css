@@ -18,6 +18,11 @@ html {
   max-width: max-content;
 }
 
+.call-to-action {
+  position: fixed;
+  z-index: 1000;
+}
+
 .mesh {
   position: absolute;
 }
