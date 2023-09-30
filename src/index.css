@@ -19,7 +19,7 @@ html {
 }
 
 .call-to-action {
-  position: fixed;
+  position: absolute;
   z-index: 1000;
 }
 
