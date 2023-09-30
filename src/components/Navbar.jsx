@@ -60,11 +60,9 @@ const Navbar = () => {
     mediaQueryFunc("change", 800, setIsFS);
   }, []);
 
-  const handleClick = () => {};
-
   return (
     <nav
-      className={`${styles.paddingX} w-screen flex  py-5 fixed bg-black z-[1]`}
+      className={`${styles.paddingX} w-screen flex  py-5 fixed bg-black z-[10000]`}
     >
       <div className="w-full flex justify-around items-center max-w-7xl mx-auto">
         <Link
