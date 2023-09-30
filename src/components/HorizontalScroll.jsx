@@ -105,7 +105,7 @@ const cards = [
       "coffeeAPI",
     ],
     gh: "https://github.com/pauljsyi/coffeazy",
-    site: "https://coffeazy.vercel.app/",
+    site: "https://coffeazy-pauljsyi.vercel.app/",
     id: 1,
   },
   {
