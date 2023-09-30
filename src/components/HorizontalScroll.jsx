@@ -92,7 +92,7 @@ const cards = [
   {
     url: coffeazy,
     title: "Coffeazy",
-    desc: "Created a (proof of concept) coffee shop storefront with administrative functionality for managing coffee items and inventory for an up and coming coffee business.  Owner wanted the flexibility to update and change available menu items on the fly.",
+    desc: "Created a (proof of concept) coffee shop storefront with administrative functionality for managing coffee items and inventory for an up and coming coffee business.  Owner wanted the flexibility to update and change available menu items on the fly.  Project started off with a monolithic architecture in mind but, ended up decoupling frontend and backend services with separate deployments in order to achieve a more scalable, flexible, and potentially more optimized application.",
     stack: [
       "mongodb",
       "mongoose",
@@ -104,7 +104,7 @@ const cards = [
       "bootstrap",
       "coffeeAPI",
     ],
-    gh: "https://github.com/pauljsyi/coffeazy",
+    gh: "https://github.com/pauljsyi/coffeazy-react-ui",
     site: "https://coffeazy-pauljsyi.vercel.app/",
     id: 1,
   },
