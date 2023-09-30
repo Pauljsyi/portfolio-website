@@ -25,8 +25,8 @@ const Hero = () => {
   }, [mousePosition]);
 
   return (
-    <section className="w-full h-screen mx-auto snap-center">
-      <div className="w-full h-screen mx-auto" id="hero">
+    <section className="w-screen h-screen mx-auto snap-center">
+      <div className="w-screen h-screen mx-auto" id="hero">
         <div id="spotlight"></div>
       </div>
       <div
