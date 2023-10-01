@@ -90,7 +90,7 @@ const Modal = (props) => {
         }}
       />
       <div
-        className="text-black flex flex-col w-[80%] h-[80%] rounded-md"
+        className="text-black flex flex-col rounded-md h-[80%] xl:w-[1200px] w-screen"
         id="modal-container"
       >
         {/* HEADER */}
@@ -113,6 +113,7 @@ const Modal = (props) => {
                 github
               </a>
             </button>
+
             <button
               className="mx-[5px] bg-white hover:bg-gray-100 text-gray-800  font-semibold py-2 px-4 border border-gray-400 rounded shadow"
               onClick={handleToggle}
@@ -123,23 +124,25 @@ const Modal = (props) => {
               >
                 <img className=" w-[25px] mr-[10px]" src={react} alt="github" />
                 {!!currProject.site && !toggleDesc ? (
-                  "see description"
+                  "see preview"
                 ) : (
-                  <p>{!currProject.site ? "no preview" : " see preview"}</p>
+                  <p>{!currProject.site ? "no preview" : " see description"}</p>
                 )}
               </a>
             </button>
           </div>
 
           <div
-            className="flex flex-row items-center justify-between "
+            className="flex flex-row items-center justify-between"
             id="modal-header-right"
           >
             {currProject.site === "" ? (
-              "under construction"
+              <p className="text-[14px] text-[red] mr-[30px]">
+                under construction
+              </p>
             ) : (
               <a
-                className="text-[14px]"
+                className="text-[14px] text-[green] mr-[30px]"
                 href={currProject.site}
                 rel="noreferrer"
                 target="_blank"
@@ -148,27 +151,28 @@ const Modal = (props) => {
               </a>
             )}
             <button
+              className=""
               size="xl"
               onClick={() => {
                 setOpen(!open);
                 document.body.style.overflow = "unset";
               }}
             >
-              <h1 className="text-[30px]">X</h1>
+              <h1 className="text-[14px]">close</h1>
             </button>
           </div>
         </div>
         {/* BODY */}
-        <div className="relative h-full max-h-[543px]" id="modal-body">
+        <div className="relative  h-[150%] " id="modal-body">
           <img
             alt={currProject.title}
             className="h-full w-full"
             src={currProject.url}
           />
           <div
-            className={`absolute top-0 left-0 backdrop-blur-lg backdrop-brightness-[.60]  grayscale-[30%] w-[100%] h-full`}
+            className={`absolute top-0 left-0 backdrop-blur-lg backdrop-brightness-[.60]  grayscale-[30%] w-full h-full`}
           >
-            {currProject.site && !toggleDesc ? (
+            {currProject.site && toggleDesc ? (
               <iframe
                 className="h-full w-full"
                 title="coffeazy app"
@@ -186,28 +190,30 @@ const Modal = (props) => {
           </div>
         </div>
         {/* FOOTER */}
-        <div
-          className="flex flex-col items-center justify-between"
-          id="modal-footer"
-        >
-          <div>
-            <p className="font-normal">The Stack:</p>
-          </div>
-          <div className="relative ">
-            <div id="stack-item" className="font-normal flex  flex-wrap">
-              {open
-                ? currProject.stack.map((stack, indx) => (
-                    <div className="m-[15px]" key={indx}>
-                      <img
-                        className="w-[45px]"
-                        key={indx}
-                        src={techIcons[stack]}
-                        title={stack}
-                        alt={stack}
-                      />
-                    </div>
-                  ))
-                : null}
+        <div>
+          <div
+            className="flex flex-col items-center justify-between"
+            id="modal-footer"
+          >
+            <div>
+              <p className="font-normal">The Stack:</p>
+            </div>
+            <div className="relative">
+              <div id="stack-item" className="font-normal flex flex-wrap ">
+                {open
+                  ? currProject.stack.map((stack, indx) => (
+                      <div className="m-[15px]" key={indx}>
+                        <img
+                          className="w-[45px]"
+                          key={indx}
+                          src={techIcons[stack]}
+                          title={stack}
+                          alt={stack}
+                        />
+                      </div>
+                    ))
+                  : null}
+              </div>
             </div>
           </div>
         </div>
