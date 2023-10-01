@@ -29,6 +29,7 @@ import {
   postgresql,
   mongoose,
   csharp,
+  aws,
 } from "../assets/index";
 
 const techIcons = {
@@ -60,6 +61,7 @@ const techIcons = {
   postgresql: postgresql,
   mongoose: mongoose,
   csharp: csharp,
+  aws: aws,
 };
 
 const Modal = (props) => {

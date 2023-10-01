@@ -31,6 +31,7 @@ import postgresql from "./tech/postgresql.svg";
 import mongoose from "./tech/mongoose.png";
 import csharp from "./tech/csharp.svg";
 import githubdark from "./icons/github-mark.png";
+import aws from "./tech/aws.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -56,6 +57,7 @@ export {
   googledocs,
   // googleforms,
   // linkedinsvg,
+  aws,
   github,
   linkedin,
   resume,

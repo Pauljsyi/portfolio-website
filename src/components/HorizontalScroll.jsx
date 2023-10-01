@@ -120,10 +120,10 @@ const cards = [
   {
     url: paradigmguitar,
     title: "Paradigm Guitar",
-    desc: "A boutique guitar store application with cart and checkout functionality built from scratch (not recommended). However, I do enjoy looking at beautifully crafted guitars and adding as many of them as I can to make me feel rich.",
-    stack: ["mongodb", "mongoose", "express", "react", "nodejs", "css"],
+    desc: "One of my very first projects.  Created a boutique guitar store application with cart and checkout functionality built from scratch (not recommended for beginners). However, I do enjoy looking at beautifully crafted guitars and adding as many of them as I can to make me feel rich. App originally deployed on AWS EC2 and assets stored in S3. Now deployed on Vercel for your pleasure.",
+    stack: ["mongodb", "mongoose", "express", "react", "nodejs", "css", "aws"],
     gh: "https://github.com/Pauljsyi/paradigmguitar-showcase",
-    site: "",
+    site: "https://paradigmguitar-showcase-btmxt2cj2-pauljsyi.vercel.app/",
     id: 3,
   },
   {
