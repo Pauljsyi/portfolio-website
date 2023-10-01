@@ -68,7 +68,6 @@ const VerticalTabs = () => {
       >
         {data.map(({ label, value }, indx) => (
           <Tab
-            key={indx}
             className={`z-10 flex justify-end mb-5 uppercase justify-center  ${
               activeTab === value ? "text-[#FF8787]" : ""
             } `}

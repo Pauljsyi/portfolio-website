@@ -4,7 +4,15 @@ import { styles } from "../styles";
 import { RobotCanvas } from "./canvas";
 import Wrapper from "./hoc/Wrapper";
 import Contact from "./Contact";
-import { github, linkedin, resume } from "../assets/index";
+import {
+  github,
+  linkedin,
+  resume,
+  // githubsvg,
+  googledocs,
+  // googleforms,
+  // linkedinsvg,
+} from "../assets/index";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState(undefined);
@@ -57,7 +65,9 @@ const Hero = () => {
           </div>
         </div>
         <div className="absolute left-0 top-0 w-full h-screen">
-          <RobotCanvas />
+          <a href="https://github.com/pauljsyi">
+            <RobotCanvas />
+          </a>
         </div>
       </div>
     </section>

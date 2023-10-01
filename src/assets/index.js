@@ -40,6 +40,10 @@ import tesla from "./company/tesla.png";
 import github from "./cta/github.png";
 import linkedin from "./cta/linkedin-rounded.png";
 import resume from "./cta/resume.png";
+// import githubsvg from "./cta/github.svg";
+import googledocs from "./cta/googledocs.svg";
+// import googleforms from "./cta/googleforms.svg";
+// import linkedinsvg from "./cta/linkedin.svg";
 
 // project assets
 import coffeazy from "./projects/coffeazy.png";
@@ -48,6 +52,10 @@ import klickklack from "./projects/klickklack.png";
 import weddingplanner from "./projects/weddingplanner.png";
 
 export {
+  // githubsvg,
+  googledocs,
+  // googleforms,
+  // linkedinsvg,
   github,
   linkedin,
   resume,
