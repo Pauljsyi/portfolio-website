@@ -86,6 +86,7 @@ const Modal = (props) => {
         id="overlay"
         onClick={() => {
           setOpen(!open);
+          setToggleDesc(!toggleDesc);
           document.body.style.overflow = "unset";
         }}
       />
