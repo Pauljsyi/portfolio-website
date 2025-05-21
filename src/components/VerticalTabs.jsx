@@ -63,7 +63,7 @@ const data = [
 
 const VerticalTabs = () => {
   const { mediaQueryFunc } = helpers;
-  const [activeTab, setActiveTab] = useState("crossed");
+  const [activeTab, setActiveTab] = useState("guitarcenter");
   const [isFS, setIsFS] = useState(false);
 
   useEffect(() => {
