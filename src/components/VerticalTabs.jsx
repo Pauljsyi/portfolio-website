@@ -6,7 +6,15 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
-let gcLink = "https://monkey-sales-tracker-pauljsyis-projects.vercel.app/";
+let monkey = "https://monkey-sales-tracker-pauljsyis-projects.vercel.app/";
+// let gcLink = <Link to={monkey}>internal web tool</Link>;
+let gcLink = <a href={monkey}>internal web tool</a>;
+let gc1 = "Created a lightweight";
+let gc2 = "to track and visualize sales and inventory data.";
+// let content = {
+//   "Created a lightweight " +
+//   { gcLink } +
+//   " to track and visualize sales and inventory data."}
 
 import helpers from "../utils/helpers";
 import { styles } from "../styles";
@@ -19,9 +27,13 @@ const data = [
     position: "Gear Advisor",
     dates: "Nov 2023 - Present",
     desc: [
-      "Created a lightweight " +
-        <Link to={gcLink}>internal web tool</Link> +
-        " to track and visualize sales and inventory data.",
+      <>
+        {gc1}{" "}
+        <u>
+          <b>{gcLink}</b>
+        </u>{" "}
+        {gc2}
+      </>,
       "Participated in a hackathon to prototype AI integrations for internal operations.",
       "Provide key insights into system improvements, driving customer satisfaction and operational efficiency.",
     ],
