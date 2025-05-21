@@ -10,6 +10,7 @@ import {
   paradigmguitar,
   klickklack,
   weddingplanner,
+  monkey,
 } from "../assets/index";
 
 const HorizontalScroll = () => {
@@ -40,8 +41,7 @@ const HorizontalScroll = () => {
       <section
         id="horizontalscrollcarousel"
         ref={targetRef}
-        className={`relative flex flex-col  pt-[9px] ${blur}`}
-      >
+        className={`relative flex flex-col  pt-[9px] ${blur}`}>
         <h1 className={`${styles.sectionHeadText}  lowercase text-center`}>
           Here's some of my work.
         </h1>
@@ -63,8 +63,7 @@ const HorizontalScroll = () => {
                   if (typeof window != "undefined" && window.document) {
                     document.body.style.overflow = "hidden";
                   }
-                }}
-              >
+                }}>
                 <img
                   alt="nature"
                   className="h-full w-full object-cover object-center transition-transform duration-300 blur-sm grayscale-[40%] group-hover:scale-110  group-hover:filter-none"
@@ -134,6 +133,15 @@ const cards = [
     gh: "https://github.com/Pauljsyi/weddingplannerapp",
     site: "",
     id: 4,
+  },
+  {
+    url: monkey,
+    title: "Monkey Sales Tracker",
+    desc: "Created an internal tool while working as a Gear Advisor at Guitar Center. During a new system integration period, it was proving to be difficult to track current sales metrics (current margin, commission tier, & order activity).  I took the weekend to build a simple, lightweight react app and a simple algorithm to help identify lost revenue and calculate net margin to date and shared it with my team, resulting in improved follow ups and commission retention by 8-10%!",
+    stack: ["react", "css", "javascript", "vercel"],
+    gh: "https://github.com/pauljsyi/MonkeySalesTracker",
+    site: "https://monkey-sales-tracker-pauljsyis-projects.vercel.app/",
+    id: 5,
   },
   // {
   //   url: "/imgs/abstract/5.jpg",

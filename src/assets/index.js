@@ -51,6 +51,7 @@ import coffeazy from "./projects/coffeazy.png";
 import paradigmguitar from "./projects/paradigmguitar.png";
 import klickklack from "./projects/klickklack.png";
 import weddingplanner from "./projects/weddingplanner.png";
+import monkey from "./projects/monkey.png";
 
 export {
   // githubsvg,
@@ -101,4 +102,5 @@ export {
   postgresql,
   mongoose,
   csharp,
+  monkey,
 };
