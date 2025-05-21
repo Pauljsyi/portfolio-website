@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Link } from "react";
 import {
   Tabs,
   TabsHeader,
@@ -6,16 +6,31 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
+let gcLink = "https://monkey-sales-tracker-pauljsyis-projects.vercel.app/";
+
 import helpers from "../utils/helpers";
 import { styles } from "../styles";
 import { after } from "lodash";
 
 const data = [
   {
+    label: "Guitar Center",
+    value: "guitarcenter",
+    position: "Gear Advisor",
+    dates: "Nov 2023 - Present",
+    desc: [
+      "Created a lightweight " +
+        <Link to={gcLink}>internal web tool</Link> +
+        " to track and visualize sales and inventory data.",
+      "Participated in a hackathon to prototype AI integrations for internal operations.",
+      "Provide key insights into system improvements, driving customer satisfaction and operational efficiency.",
+    ],
+  },
+  {
     label: "Crossed",
     value: "crossed",
     position: "Software Engineer",
-    dates: "May 2023 - Current",
+    dates: "May 2023 - Jul 2023",
     desc: [
       "Developed and launched an MVP mobile application leveraging geolocation technology, facilitating meaningful connections for 		individuals interested in romance, business, and social relationships.",
       "Developed a responsive mobile UI/UX utilizing React Native, resulting in a 40% increase in user engagement and a 25% decrease in bounce rate within the first month.",
@@ -59,13 +74,11 @@ const VerticalTabs = () => {
     <Tabs
       className="h-[657px] max-w-screen-xl mx-auto mt-16 justify-center"
       value={activeTab}
-      orientation={isFS ? "horizontal" : "vertical"}
-    >
+      orientation={isFS ? "horizontal" : "vertical"}>
       <TabsHeader
         className={`max-w-screen-sm w-[150px] flex sm:flex-column ${
           isFS ? "flex-row w-[100%]" : ""
-        }`}
-      >
+        }`}>
         {data.map(({ label, value }, indx) => (
           <Tab
             className={`z-10 flex justify-end mb-5 uppercase justify-center  ${
@@ -73,8 +86,7 @@ const VerticalTabs = () => {
             } `}
             onClick={() => setActiveTab(value)}
             key={value}
-            value={value}
-          >
+            value={value}>
             {label}
           </Tab>
         ))}
@@ -92,8 +104,7 @@ const VerticalTabs = () => {
               {desc.map((item, indx) => (
                 <div
                   key={indx}
-                  className="flex sm:text-[16px] text-[11px] text-secondary lowercase tracking-wider"
-                >
+                  className="flex sm:text-[16px] text-[11px] text-secondary lowercase tracking-wider">
                   <span className="ml-12 mr-6">&#8226;</span>
                   <li>{item}</li>
                 </div>

@@ -91,7 +91,7 @@ const Modal = (props) => {
         }}
       />
       <div
-        className="text-black flex flex-col rounded-md h-[80%] xl:w-[1200px] w-screen"
+        className="text-black flex flex-col rounded-md h-[700px] xl:w-[1200px] lg:w-[900px] w-screen "
         id="modal-container"
       >
         {/* HEADER */}
@@ -164,7 +164,7 @@ const Modal = (props) => {
           </div>
         </div>
         {/* BODY */}
-        <div className="relative  h-[150%] " id="modal-body">
+        <div className="relative h-[500px]" id="modal-body">
           <img
             alt={currProject.title}
             className="h-full w-full"
